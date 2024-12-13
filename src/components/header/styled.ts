@@ -25,6 +25,7 @@ export const HeaderIcon = styled.div<{ $padding: string }>`
     padding: ${({$padding}) => $padding}px;
     border-radius: 50%;
     filter: drop-shadow(0px 3px 10px rgba(0, 0, 0, 0.12));
+    position: relative;
 `;
 
 export const HeaderIconCounter = styled.span<{ $small: boolean }>`
