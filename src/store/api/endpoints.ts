@@ -1,0 +1,13 @@
+export const GetSplashes = 'splashes';
+export const GetOffersEndpoint = 'offers';
+export const GetBestOffersEndpoint = 'best-offers';
+export const GetNewProductsEndpoint = 'new-products';
+export const GetSpecialOffersEndpoint = 'special-offers';
+export const GetAllCategories = 'categories';
+export const GetHomeFilterCategories = 'home-filter-categories';
+export const GetCartCount = 'cart-count';
+export const GetNotificationsCount = 'notifications-count';
+export const GetNotifications = 'notifications';
+export const GetPurchases = 'purchases';
+export const GetStoreInfo = 'store-info';
+export const GetProfileInfo = 'profile-info';
