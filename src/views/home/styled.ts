@@ -141,11 +141,11 @@ export const HomeProductImage = styled.img`
 
 export const HomeProductFavoriteIcon = styled.div`
     position: absolute;
-    top: 160px;
+    top: 50%;
     left: 12px;
 
     &.small {
-        top: 98px;
+        top: 38%;
         left: 8px;
     }
 `;
