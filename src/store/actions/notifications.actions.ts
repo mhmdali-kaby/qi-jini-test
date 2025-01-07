@@ -2,6 +2,7 @@ import {createAsyncThunk} from "@reduxjs/toolkit";
 // import api from "../api/axios.ts";
 // import {GetNotifications, GetNotificationsCount} from "../api/endpoints.ts";
 import {CountDummy, NotificationsDummy} from "../../dummy-data.ts";
+import {AxiosError} from "axios";
 
 export const getNotificationsCount = createAsyncThunk(
 	'notifications/getNotificationsCount',
@@ -10,8 +11,9 @@ export const getNotificationsCount = createAsyncThunk(
 			// const response = await api.get(GetNotificationsCount);
 			// return await response.data;
 			return CountDummy;
-		} catch (error: any) {
-			return rejectWithValue(error.response?.data?.message || 'Failed to fetch notifications count');
+		} catch (err) {
+			const error = err as AxiosError;
+			return rejectWithValue(error.response?.data || 'Failed to fetch notifications count');
 		}
 	}
 );
@@ -23,8 +25,9 @@ export const getNotifications = createAsyncThunk(
 			// const response = await api.get(GetNotifications);
 			// return await response.data;
 			return NotificationsDummy;
-		} catch (error: any) {
-			return rejectWithValue(error.response?.data?.message || 'Failed to fetch notifications');
+		} catch (err) {
+			const error = err as AxiosError;
+			return rejectWithValue(error.response?.data || 'Failed to fetch notifications');
 		}
 	}
 );

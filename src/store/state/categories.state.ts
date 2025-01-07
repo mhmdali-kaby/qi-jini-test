@@ -1,12 +1,12 @@
 import {ICategory} from "../interfaces/category.interface.ts";
 
-interface CategoryState {
+interface CategoriesState {
 	data: ICategory[];
 	loading: boolean;
 	error: string | null;
 }
 
-export const categoryInitialState: CategoryState = {
+export const categoriesInitialState: CategoriesState = {
 	data: [],
 	loading: false,
 	error: null,

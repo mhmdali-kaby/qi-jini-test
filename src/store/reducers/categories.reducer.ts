@@ -1,10 +1,10 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {getAllCategories} from "../actions/categories.actions.ts";
-import {categoryInitialState} from "../state/categories.state.ts";
+import {categoriesInitialState} from "../state/categories.state.ts";
 
 const categoriesSlice = createSlice({
 	name: 'categories',
-	initialState: categoryInitialState,
+	initialState: categoriesInitialState,
 	reducers: {},
 	extraReducers: (builder) => {
 		builder

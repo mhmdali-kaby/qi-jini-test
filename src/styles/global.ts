@@ -67,19 +67,22 @@ export const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
         font-weight: 100;
         font-style: normal;
     }
-		
+
     body {
         margin: 0;
         font-family: 'Ping AR + LT', sans-serif;
     }
+
     .hidden-scroll {
         -ms-overflow-style: none;
         scrollbar-width: none;
-		    &::-webkit-scrollbar {
+
+        &::-webkit-scrollbar {
             display: none;
         }
     }
+
     a {
-		    text-decoration: none;
+        text-decoration: none;
     }
 `;

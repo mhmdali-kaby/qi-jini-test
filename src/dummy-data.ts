@@ -298,3 +298,70 @@ export const ProfileInfoDummy = {
 	phone: '07722687441',
 	avatar: '/dummy/profile.png',
 };
+
+export const DiscountDummy = [
+	{
+		id: 1,
+		title: 'الملابس والاحذية',
+		discounts: [
+			{
+				id: 1,
+				discount: 20,
+				thumbnail: '/dummy/discount-thumbnail.png',
+				image: '/dummy/discount1.png',
+			},
+			{
+				id: 2,
+				discount: 30,
+				thumbnail: '/dummy/discount-thumbnail.png',
+				image: '/dummy/discount2.png',
+			},
+			{
+				id: 3,
+				discount: 40,
+				thumbnail: '/dummy/discount-thumbnail.png',
+				image: '/dummy/discount1.png',
+			},
+			{
+				id: 4,
+				discount: 50,
+				thumbnail: '/dummy/discount-thumbnail.png',
+				image: '/dummy/discount2.png',
+			},
+		],
+		border_type: 'solid',
+		border_color: '#4B556326',
+	},
+	{
+		id: 2,
+		title: 'الاجهزة والالكترونيات',
+		discounts: [
+			{
+				id: 5,
+				discount: 20,
+				thumbnail: '/dummy/discount-thumbnail.png',
+				image: '/dummy/discount1.png',
+			},
+			{
+				id: 6,
+				discount: 30,
+				thumbnail: '/dummy/discount-thumbnail.png',
+				image: '/dummy/discount2.png',
+			},
+			{
+				id: 7,
+				discount: 40,
+				thumbnail: '/dummy/discount-thumbnail.png',
+				image: '/dummy/discount1.png',
+			},
+			{
+				id: 8,
+				discount: 50,
+				thumbnail: '/dummy/discount-thumbnail.png',
+				image: '/dummy/discount2.png',
+			},
+		],
+		border_type: 'dashed',
+		border_color: '#F97316',
+	},
+];

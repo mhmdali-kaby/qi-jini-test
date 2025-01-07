@@ -1,5 +1,6 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
 import {OffersDummy, ProductsDummy} from "../../dummy-data.ts";
+import {AxiosError} from "axios";
 // import {
 // 	GetBestOffersEndpoint,
 // 	GetNewProductsEndpoint,
@@ -15,8 +16,9 @@ export const getOffers = createAsyncThunk(
 			// const response = await api.get(GetOffersEndpoint);
 			// return await response.data;
 			return OffersDummy;
-		} catch (error: any) {
-			return rejectWithValue(error.response?.data?.message || 'Failed to fetch Offers');
+		} catch (err) {
+			const error = err as AxiosError;
+			return rejectWithValue(error.response?.data || 'Failed to fetch Offers');
 		}
 	}
 );
@@ -28,8 +30,9 @@ export const getBestOffers = createAsyncThunk(
 			// const response = await api.get(GetBestOffersEndpoint);
 			// return await response.data;
 			return ProductsDummy;
-		} catch (error: any) {
-			return rejectWithValue(error.response?.data?.message || 'Failed to fetch Best Offers');
+		} catch (err) {
+			const error = err as AxiosError;
+			return rejectWithValue(error.response?.data || 'Failed to fetch Best Offers');
 		}
 	}
 );
@@ -41,8 +44,9 @@ export const getNewProducts = createAsyncThunk(
 			// const response = await api.get(GetNewProductsEndpoint);
 			// return await response.data;
 			return ProductsDummy;
-		} catch (error: any) {
-			return rejectWithValue(error.response?.data?.message || 'Failed to fetch New Products');
+		} catch (err) {
+			const error = err as AxiosError;
+			return rejectWithValue(error.response?.data || 'Failed to fetch New Products');
 		}
 	}
 );
@@ -54,8 +58,9 @@ export const getSpecialOffers = createAsyncThunk(
 			// const response = await api.get(GetSpecialOffersEndpoint);
 			// return await response.data;
 			return ProductsDummy;
-		} catch (error: any) {
-			return rejectWithValue(error.response?.data?.message || 'Failed to fetch Special Offers');
+		} catch (err) {
+			const error = err as AxiosError;
+			return rejectWithValue(error.response?.data || 'Failed to fetch Special Offers');
 		}
 	}
 );

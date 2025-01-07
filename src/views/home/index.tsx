@@ -7,6 +7,7 @@ import SearchInput from "../../components/search-input";
 import {
 	FilterCategoriesContainer,
 	FilterCategory,
+	FilterIconContainer,
 	HomeProduct,
 	HomeProductContent,
 	HomeProductDescription,
@@ -73,9 +74,9 @@ const HomeView: React.FC = () => {
 			<Header showIcon={true}/>
 			<Container>
 				<SearchContainer>
-					<div>
+					<FilterIconContainer>
 						<FilterIcon/>
-					</div>
+					</FilterIconContainer>
 					<SearchInput/>
 				</SearchContainer>
 				{!filterCategories.loading && filterCategories.data.length > 0 &&

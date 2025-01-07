@@ -2,6 +2,7 @@ import {createAsyncThunk} from "@reduxjs/toolkit";
 // import api from "../api/axios.ts";
 // import {GetAllCategories, GetHomeFilterCategories} from "../api/endpoints.ts";
 import {CategoriesDummy, HomeFilterCategoriesDummy} from "../../dummy-data.ts";
+import {AxiosError} from "axios";
 
 export const getAllCategories = createAsyncThunk(
 	'categories/getAllCategories',
@@ -10,8 +11,9 @@ export const getAllCategories = createAsyncThunk(
 			// const response = await api.get(GetAllCategories);
 			// return await response.data;
 			return CategoriesDummy;
-		} catch (error: any) {
-			return rejectWithValue(error.response?.data?.message || 'Failed to fetch categories');
+		} catch (err) {
+			const error = err as AxiosError;
+			return rejectWithValue(error.response?.data || 'Failed to fetch categories');
 		}
 	}
 );
@@ -23,8 +25,9 @@ export const getHomeFilterCategories = createAsyncThunk(
 			// const response = await api.get(GetHomeFilterCategories);
 			// return await response.data;
 			return HomeFilterCategoriesDummy;
-		} catch (error: any) {
-			return rejectWithValue(error.response?.data?.message || 'Failed to fetch categories');
+		} catch (err) {
+			const error = err as AxiosError;
+			return rejectWithValue(error.response?.data || 'Failed to fetch categories');
 		}
 	}
 );

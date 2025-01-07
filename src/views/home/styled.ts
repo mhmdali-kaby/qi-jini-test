@@ -10,6 +10,11 @@ export const SearchContainer = styled.div`
     }
 `;
 
+export const FilterIconContainer = styled.div`
+    display: flex;
+    align-items: center;
+`;
+
 export const FilterCategoriesContainer = styled.div`
     display: flex;
     gap: 12px;

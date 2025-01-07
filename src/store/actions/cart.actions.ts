@@ -2,6 +2,7 @@ import {createAsyncThunk} from "@reduxjs/toolkit";
 // import api from "../api/axios.ts";
 // import { GetCartCount } from "../api/endpoints.ts";
 import {CountDummy} from "../../dummy-data.ts";
+import {AxiosError} from "axios";
 
 export const getCartCount = createAsyncThunk(
 	'cart/getCartCount',
@@ -10,8 +11,9 @@ export const getCartCount = createAsyncThunk(
 			// const response = await api.get(GetCartCount);
 			// return await response.data;
 			return CountDummy;
-		} catch (error: any) {
-			return rejectWithValue(error.response?.data?.message || 'Failed to fetch cart count');
+		} catch (err) {
+			const error = err as AxiosError;
+			return rejectWithValue(error.response?.data || 'Failed to fetch cart count');
 		}
 	}
 );

@@ -7,6 +7,7 @@ import notificationsReducer from "./reducers/notifications.reducer.ts";
 import storeReducer from "./reducers/store.reducer.ts";
 import purchasesReducer from "./reducers/purchases.reducer.ts";
 import profileReducer from "./reducers/profile.reducer.ts";
+import discountsReducer from "./reducers/discounts.reducer.ts";
 
 export const store = configureStore({
 	reducer: {
@@ -18,6 +19,7 @@ export const store = configureStore({
 		storeReducer,
 		purchasesReducer,
 		profileReducer,
+		discountsReducer,
 	},
 });
 

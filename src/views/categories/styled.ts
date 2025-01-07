@@ -6,10 +6,10 @@ interface CategoryProps {
 }
 
 export const CategoriesContainer = styled.div`
-	display: flex;
-		flex-direction: column;
-		gap: 16px;    
-		margin: 24px 0 42px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 24px 0 42px;
 `;
 
 export const Category = styled.div<CategoryProps>`
@@ -26,7 +26,7 @@ export const CategoryText = styled.div`
     display: flex;
     flex-direction: column;
     gap: 4px;
-		width: fit-content;
+    width: fit-content;
 `;
 
 export const CategoryTitle = styled.div`
