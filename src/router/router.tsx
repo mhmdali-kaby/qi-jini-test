@@ -6,6 +6,7 @@ import {
 	DiscountsRoute,
 	HomeRoute,
 	NotificationsRoute,
+	ProductRoute,
 	ProfileRoute,
 	PurchasesRoute,
 	SplashRoute
@@ -15,6 +16,7 @@ import NotificationsView from "../views/notifications";
 import PurchasesView from "../views/purchases";
 import ProfileView from "../views/profile";
 import DiscountsView from "../views/discounts";
+import ProductView from "../views/product";
 
 function Router() {
 	return (
@@ -27,6 +29,7 @@ function Router() {
 				<Route path={DiscountsRoute} element={<DiscountsView/>}/>
 				<Route path={PurchasesRoute} element={<PurchasesView/>}/>
 				<Route path={ProfileRoute} element={<ProfileView/>}/>
+				<Route path={ProductRoute} element={<ProductView/>}/>
 			</Routes>
 		</BrowserRouter>
 	)

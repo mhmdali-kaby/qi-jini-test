@@ -20,12 +20,14 @@ import {HomeRoute, NotificationsRoute} from "../../router/routes.ts";
 import CartIcon from "../icons/cart.icon.tsx";
 import NotificationIcon from "../icons/notification.icon.tsx";
 import LeftArrowIcon from "../icons/left-arrow.icon.tsx";
+import {useTranslation} from "react-i18next";
 
 interface HeaderProps {
 	showIcon?: boolean;
 }
 
 const Header: React.FC<HeaderProps> = ({showIcon}) => {
+	const { t } = useTranslation();
 	const dispatch = useDispatch<AppDispatch>();
 	const {count: cartCount} = useSelector((state: RootState) => state.cartReducer);
 	const {count: notificationCount} = useSelector((state: RootState) => state.notificationsReducer);
@@ -78,7 +80,7 @@ const Header: React.FC<HeaderProps> = ({showIcon}) => {
 				{store &&
           <HeaderRightContent>
             <HeaderRightContentWelcome>
-              مرحبا بك في
+	            {t('welcome_to')}
             </HeaderRightContentWelcome>
             <HeaderRightContentName>
 							{store.name}

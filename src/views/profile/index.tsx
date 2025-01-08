@@ -28,8 +28,10 @@ import LocationsLinkIcon from "../../components/icons/locations-link.icon.tsx";
 import CommonQuestionsLinkIcon from "../../components/icons/common-questions-link.icon.tsx";
 import PrivacyPolicyLinkIcon from "../../components/icons/privacy-policy-link.icon.tsx";
 import CommunityLinkIcon from "../../components/icons/community-link.icon.tsx";
+import {useTranslation} from "react-i18next";
 
 const ProfileView: React.FC = () => {
+	const { t } = useTranslation();
 	const dispatch = useDispatch<AppDispatch>();
 	const {info, loading} = useSelector((state: RootState) => state.profileReducer);
 
@@ -68,7 +70,7 @@ const ProfileView: React.FC = () => {
                 <LinkLeftIcon/>
                 <RightLinkContent>
                   <LinkTitle>
-                    المعلومات الشخصية
+	                  {t('personal_information')}
                   </LinkTitle>
                   <ProfileLinkIcon/>
                 </RightLinkContent>
@@ -77,7 +79,7 @@ const ProfileView: React.FC = () => {
                 <LinkLeftIcon/>
                 <RightLinkContent>
                   <LinkTitle>
-                    سجل الطلبات
+	                  {t('orders_list')}
                   </LinkTitle>
                   <OrdersLinkIcon/>
                 </RightLinkContent>
@@ -86,7 +88,7 @@ const ProfileView: React.FC = () => {
                 <LinkLeftIcon/>
                 <RightLinkContent>
                   <LinkTitle>
-                    المفضلة
+	                  {t('favorites')}
                   </LinkTitle>
                   <FavoritesLinkIcon/>
                 </RightLinkContent>
@@ -95,7 +97,7 @@ const ProfileView: React.FC = () => {
                 <LinkLeftIcon/>
                 <RightLinkContent>
                   <LinkTitle>
-                    العناوين
+	                  {t('addresses')}
                   </LinkTitle>
                   <LocationsLinkIcon/>
                 </RightLinkContent>
@@ -106,7 +108,7 @@ const ProfileView: React.FC = () => {
                 <LinkLeftIcon/>
                 <RightLinkContent>
                   <LinkTitle>
-                    الأسئلة الشائعة
+	                  {t('common_questions')}
                   </LinkTitle>
                   <CommonQuestionsLinkIcon/>
                 </RightLinkContent>
@@ -115,7 +117,7 @@ const ProfileView: React.FC = () => {
                 <LinkLeftIcon/>
                 <RightLinkContent>
                   <LinkTitle>
-                    الشروط و الأحكام
+	                  {t('terms_and_conditions')}
                   </LinkTitle>
                   <PrivacyPolicyLinkIcon/>
                 </RightLinkContent>
@@ -124,7 +126,7 @@ const ProfileView: React.FC = () => {
                 <LinkLeftIcon/>
                 <RightLinkContent>
                   <LinkTitle>
-                    المجتمع
+	                  {t('community')}
                   </LinkTitle>
                   <CommunityLinkIcon/>
                 </RightLinkContent>

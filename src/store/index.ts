@@ -8,6 +8,7 @@ import storeReducer from "./reducers/store.reducer.ts";
 import purchasesReducer from "./reducers/purchases.reducer.ts";
 import profileReducer from "./reducers/profile.reducer.ts";
 import discountsReducer from "./reducers/discounts.reducer.ts";
+import productReducer from "./reducers/product.reducer.ts";
 
 export const store = configureStore({
 	reducer: {
@@ -20,6 +21,7 @@ export const store = configureStore({
 		purchasesReducer,
 		profileReducer,
 		discountsReducer,
+		productReducer,
 	},
 });
 

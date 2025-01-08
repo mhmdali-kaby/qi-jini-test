@@ -27,8 +27,11 @@ import {AppDispatch, RootState} from "../../store";
 import {getPurchases} from "../../store/actions/purchases.actions.ts";
 import CompleteIcon from "../../components/icons/complete.icon.tsx";
 import {formatPrice} from "../../utils/numbers.ts";
+import {useTranslation} from "react-i18next";
+import {AttributeType} from "../../store/interfaces/product-attribute.interface.ts";
 
 const PurchasesView: React.FC = () => {
+	const { t } = useTranslation();
 	const dispatch = useDispatch<AppDispatch>();
 	const {data, loading} = useSelector((state: RootState) => state.purchasesReducer);
 
@@ -43,15 +46,15 @@ const PurchasesView: React.FC = () => {
 				<PurchasesHeader>
 					<PurchasesTabs>
 						<PurchasesTab $is_active={true}>
-							<div>مكتملة</div>
+							<div>{t('completed')}</div>
 							<ActiveTabIcon/>
 						</PurchasesTab>
 						<PurchasesTab $is_active={false}>
-							<div>مستمرة</div>
+							<div>{t('on_going')}</div>
 							<InActiveTabIcon/>
 						</PurchasesTab>
 					</PurchasesTabs>
-					<PurchasesTitle>المشتريات</PurchasesTitle>
+					<PurchasesTitle>{t('purchases')}</PurchasesTitle>
 				</PurchasesHeader>
 				{!loading && data.length > 0 &&
           <PurchasesContainer>
@@ -64,17 +67,20 @@ const PurchasesView: React.FC = () => {
 									</PurchaseTitle>
 									<PurchaseInfo>
 										<PurchaseInfoColum className='baseline'>
-											<span>الكمية:</span>
+											<span>{t('quantity')}:</span>
 											<PurchaseInfoValue>{item.quantity}</PurchaseInfoValue>
 										</PurchaseInfoColum>
-										<PurchaseInfoColum className='baseline'>
-											<span>القياس:</span>
-											<PurchaseInfoValue>{item.size}</PurchaseInfoValue>
-										</PurchaseInfoColum>
-										<PurchaseInfoColum>
-											<span>اللون:</span>
-											<PurchaseInfoColor $color={item.color}/>
-										</PurchaseInfoColum>
+										{item.attributes.length > 0 && item.attributes.map((attribute, index) => (
+											<PurchaseInfoColum key={index}>
+												<span>{attribute.title}:</span>
+												{attribute.type == AttributeType.SIZE && (
+													<PurchaseInfoValue>{attribute.value}</PurchaseInfoValue>
+												)}
+												{attribute.type == AttributeType.COLOR && (
+													<PurchaseInfoColor $color={attribute.value}/>
+												)}
+											</PurchaseInfoColum>
+										))}
 									</PurchaseInfo>
 									<PurchaseBottom>
 										<PurchasePrice>
@@ -82,7 +88,7 @@ const PurchasesView: React.FC = () => {
 											<span>IQD</span>
 										</PurchasePrice>
 										<PurchaseStatus>
-											<div>تم التوصيل</div>
+											<div>{t('delivered')}</div>
 											<CompleteIcon/>
 										</PurchaseStatus>
 									</PurchaseBottom>

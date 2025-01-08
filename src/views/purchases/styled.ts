@@ -102,9 +102,6 @@ export const PurchaseInfoColum = styled.div`
         font-weight: 400;
         line-height: 150%;
 		}
-		&.baseline {
-				align-items: baseline;
-		}
 `;
 
 export const PurchaseInfoValue = styled.div`
@@ -115,15 +112,18 @@ export const PurchaseInfoValue = styled.div`
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
-    padding: 4px 8px 1px;
+    padding: 4px 8px 2px 10px;
+		width: 4px;
+		height: 16px;
 `;
 
 export const PurchaseInfoColor = styled.div<IPurchaseInfoColorProps>`
     padding: 2px 8px 1px;
+    border: 1px solid #CCC;
 		background-color: ${props => props.$color};
     border-radius: 50%;
     width: 6px;
-    height: 18px;
+    height: 19px;
 `;
 
 export const PurchaseBottom = styled.div`
@@ -147,6 +147,7 @@ export const PurchasePrice = styled.div`
         font-style: normal;
         font-weight: 400;
         line-height: 100%;
+				padding-bottom: 2px;
 		}
 `;
 

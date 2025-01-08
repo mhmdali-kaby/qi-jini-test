@@ -7,8 +7,10 @@ import {AppDispatch, RootState} from "../../store";
 import Nav from "../../components/nav";
 import {getAllDiscounts} from "../../store/actions/discounts.actions.ts";
 import {Discount, DiscountContainer, Discounts, DiscountsGroupTitle} from "./styled.ts";
+import {useTranslation} from "react-i18next";
 
 const DiscountsView: React.FC = () => {
+	const { t } = useTranslation();
 	const dispatch = useDispatch<AppDispatch>();
 	const {data, loading} = useSelector((state: RootState) => state.discountsReducer);
 
@@ -28,7 +30,7 @@ const DiscountsView: React.FC = () => {
 						{data.map((group, index) => group.discounts.length > 0 && (
 							<div key={index}>
 								<DiscountsGroupTitle>
-									<span>عرض الكل</span>
+									<span>{t('show_all')}</span>
 									<div>{group.title}</div>
 								</DiscountsGroupTitle>
 								<Discounts $border_color={group.border_color} $border_type={group.border_type}>

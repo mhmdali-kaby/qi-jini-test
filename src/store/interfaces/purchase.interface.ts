@@ -1,9 +1,10 @@
+import {IPurchaseAttribute} from "./purchase-attribute.interface.ts";
+
 export interface IPurchase {
 	id: number;
 	title: string;
 	quantity: number;
-	size: string;
-	color: string;
+	attributes: IPurchaseAttribute[]
 	status: number;
 	price: number;
 	image: string;

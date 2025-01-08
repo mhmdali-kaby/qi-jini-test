@@ -1,0 +1,28 @@
+{
+  "translation": {
+    "description": "الوصف",
+    "add_to_cart": "أضافة الى السلة",
+    "product": "منتج",
+    "show_all": "عرض الكل",
+    "order_now": "اطلب الان",
+    "rate": "مراجعة",
+    "previously": "سابقا",
+    "favorites": "المفضلة",
+    "addresses": "العناوين",
+    "community": "المجتمع",
+    "completed": "مكتملة",
+    "on_going": "مستمرة",
+    "purchases": "المشتريات",
+    "quantity": "الكمية",
+    "delivered": "تم التوصيل",
+    "welcome_to": "مرحبا بك في",
+    "common_questions": "الأسئلة الشائعة",
+    "terms_and_conditions": "الشروط والأحكام",
+    "personal_information": "المعلومات الشخصية",
+    "orders_list": "سجل الطلبات",
+    "special_offers": "عروض مميزة",
+    "new_products": "منتجات جديدة",
+    "best_offers": "افضل العروض",
+    "notifications": "الاشعارات"
+  }
+}

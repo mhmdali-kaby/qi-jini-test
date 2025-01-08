@@ -7,8 +7,10 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppDispatch, RootState} from "../../store";
 import {getAllCategories} from "../../store/actions/categories.actions.ts";
 import Nav from "../../components/nav";
+import {useTranslation} from "react-i18next";
 
 const CategoriesView: React.FC = () => {
+	const { t } = useTranslation();
 	const dispatch = useDispatch<AppDispatch>();
 	const {data, loading} = useSelector((state: RootState) => state.categoriesReducer);
 
@@ -33,7 +35,7 @@ const CategoriesView: React.FC = () => {
 									</CategoryTitle>
 									<CategoryCount>
 										<span>
-											منتج
+											{t('product')}
 										</span>
 										<span>
 											{category.products}

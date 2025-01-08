@@ -50,8 +50,12 @@ import {formatPrice} from "../../utils/numbers.ts";
 import StarIcon from "../../components/icons/star.icon.tsx";
 import FavoriteIcon from "../../components/icons/favorite.icon.tsx";
 import Nav from "../../components/nav";
+import {Link} from "react-router-dom";
+import {ProductRoute} from "../../router/routes.ts";
+import {useTranslation} from "react-i18next";
 
 const HomeView: React.FC = () => {
+	const { t } = useTranslation();
 	const dispatch = useDispatch<AppDispatch>();
 	const {
 		offers,
@@ -95,7 +99,7 @@ const HomeView: React.FC = () => {
 									<OfferDescription>{offer.description}</OfferDescription>
 								</OfferContent>
 								<OfferButton>
-									اطلب الان
+									{t('order_now')}
 								</OfferButton>
 							</Offer>
 						))}
@@ -104,13 +108,15 @@ const HomeView: React.FC = () => {
 				{!bestOffers.loading && offers.data.length > 0 &&
           <div>
             <HomeProductsTitle>
-              <span>عرض الكل</span>
-              <div>افضل العروض</div>
+              <span>{t('show_all')}</span>
+              <div>{t('best_offers')}</div>
             </HomeProductsTitle>
             <HomeProductsContainer>
 							{bestOffers.data.map((offer, index) => (
 								<HomeProduct key={index}>
-									<HomeProductImage src={offer.image}/>
+									<Link to={ProductRoute.replace(':id', offer.id.toString())}>
+										<HomeProductImage src={offer.image}/>
+									</Link>
 									<HomeProductFavoriteIcon>
 										<FavoriteIcon/>
 									</HomeProductFavoriteIcon>
@@ -124,7 +130,7 @@ const HomeView: React.FC = () => {
 												{offer.old_price &&
                           <HomeProductOldPrice>
                             <div>{formatPrice(offer.old_price)}</div>
-                            <span>سابقا</span>
+                            <span>{t('previously')}</span>
                           </HomeProductOldPrice>
 												}
 											</div>
@@ -133,10 +139,12 @@ const HomeView: React.FC = () => {
 												<StarIcon/>
 											</HomeProductRate>
 										</HomeProductNumbers>
-										<HomeProductText>
-											<HomeProductTitle>{offer.title}</HomeProductTitle>
-											<HomeProductDescription>{offer.description}</HomeProductDescription>
-										</HomeProductText>
+										<Link to={ProductRoute.replace(':id', offer.id.toString())}>
+											<HomeProductText>
+												<HomeProductTitle>{offer.title}</HomeProductTitle>
+												<HomeProductDescription>{offer.description}</HomeProductDescription>
+											</HomeProductText>
+										</Link>
 									</HomeProductContent>
 								</HomeProduct>
 							))}
@@ -147,8 +155,8 @@ const HomeView: React.FC = () => {
 				{!newProducts.loading && newProducts.data.length > 0 &&
           <NewProducts>
             <NewProductsTitle>
-              <span>عرض الكل</span>
-              <div>منتجات جديدة</div>
+              <span>{t('show_all')}</span>
+              <div>{t('new_products')}</div>
             </NewProductsTitle>
 						{newProducts.data.map((product, index) => (
 							<NewProduct key={index}>
@@ -164,10 +172,12 @@ const HomeView: React.FC = () => {
                       </NewProductLabel>
 										}
 									</NewProductContentHeader>
-									<NewProductText>
-										<NewProductTitle>{product.title}</NewProductTitle>
-										<NewProductDescription>{product.description}</NewProductDescription>
-									</NewProductText>
+									<Link to={ProductRoute.replace(':id', product.id.toString())}>
+										<NewProductText>
+											<NewProductTitle>{product.title}</NewProductTitle>
+											<NewProductDescription>{product.description}</NewProductDescription>
+										</NewProductText>
+									</Link>
 									<NewProductFooter>
 										<div>
 											<NewProductPrice>
@@ -177,7 +187,7 @@ const HomeView: React.FC = () => {
 											{product.old_price &&
                         <NewProductOldPrice>
                           <span>{formatPrice(product.old_price)}</span>
-                          <div>سابقا</div>
+                          <div>{t('previously')}</div>
                         </NewProductOldPrice>
 											}
 										</div>
@@ -186,7 +196,9 @@ const HomeView: React.FC = () => {
 										</div>
 									</NewProductFooter>
 								</NewProductContent>
-								<NewProductImage src={product.image}/>
+								<Link to={ProductRoute.replace(':id', product.id.toString())} className='image-container'>
+									<NewProductImage src={product.image}/>
+								</Link>
 							</NewProduct>
 						))}
           </NewProducts>
@@ -199,13 +211,15 @@ const HomeView: React.FC = () => {
 				{!specialOffers.loading && specialOffers.data.length > 0 &&
           <div>
             <HomeProductsTitle>
-              <span>عرض الكل</span>
-              <div>عروض مميزة</div>
+              <span>{t('show_all')}</span>
+              <div>{t('special_offers')}</div>
             </HomeProductsTitle>
             <HomeProductsContainer className='small'>
 							{specialOffers.data.map((offer, index) => (
 								<HomeProduct key={index} className='small'>
-									<HomeProductImage src={offer.image}/>
+									<Link to={ProductRoute.replace(':id', offer.id.toString())}>
+										<HomeProductImage src={offer.image}/>
+									</Link>
 									<HomeProductFavoriteIcon className='small'>
 										<FavoriteIcon/>
 									</HomeProductFavoriteIcon>
@@ -219,7 +233,7 @@ const HomeView: React.FC = () => {
 												{offer.old_price &&
                           <HomeProductOldPrice className='small'>
                             <div>{formatPrice(offer.old_price)}</div>
-                            <span>سابقا</span>
+                            <span>{t('previously')}</span>
                           </HomeProductOldPrice>
 												}
 											</div>
@@ -228,10 +242,12 @@ const HomeView: React.FC = () => {
 												<StarIcon isSmall={true}/>
 											</HomeProductRate>
 										</HomeProductNumbers>
-										<HomeProductText>
-											<HomeProductTitle className='small'>{offer.title}</HomeProductTitle>
-											<HomeProductDescription className='small'>{offer.description}</HomeProductDescription>
-										</HomeProductText>
+										<Link to={ProductRoute.replace(':id', offer.id.toString())}>
+											<HomeProductText>
+												<HomeProductTitle className='small'>{offer.title}</HomeProductTitle>
+												<HomeProductDescription className='small'>{offer.description}</HomeProductDescription>
+											</HomeProductText>
+										</Link>
 									</HomeProductContent>
 								</HomeProduct>
 							))}
@@ -242,8 +258,8 @@ const HomeView: React.FC = () => {
 				{!newProducts.loading && newProducts.data.length > 0 &&
           <NewProducts className="light">
             <NewProductsTitle className="light">
-              <span>عرض الكل</span>
-              <div>منتجات جديدة</div>
+              <span>{t('show_all')}</span>
+              <div>{t('new_products')}</div>
             </NewProductsTitle>
 						{newProducts.data.map((product, index) => (
 							<NewProduct key={index}>
@@ -259,10 +275,12 @@ const HomeView: React.FC = () => {
                       </NewProductLabel>
 										}
 									</NewProductContentHeader>
-									<NewProductText>
-										<NewProductTitle>{product.title}</NewProductTitle>
-										<NewProductDescription>{product.description}</NewProductDescription>
-									</NewProductText>
+									<Link to={ProductRoute.replace(':id', product.id.toString())}>
+										<NewProductText>
+											<NewProductTitle>{product.title}</NewProductTitle>
+											<NewProductDescription>{product.description}</NewProductDescription>
+										</NewProductText>
+									</Link>
 									<NewProductFooter>
 										<div>
 											<NewProductPrice>
@@ -272,7 +290,7 @@ const HomeView: React.FC = () => {
 											{product.old_price &&
                         <NewProductOldPrice>
                           <span>{formatPrice(product.old_price)}</span>
-                          <div>سابقا</div>
+                          <div>{t('previously')}</div>
                         </NewProductOldPrice>
 											}
 										</div>
@@ -281,7 +299,9 @@ const HomeView: React.FC = () => {
 										</div>
 									</NewProductFooter>
 								</NewProductContent>
-								<NewProductImage src={product.image}/>
+								<Link to={ProductRoute.replace(':id', product.id.toString())} className='image-container'>
+									<NewProductImage src={product.image}/>
+								</Link>
 							</NewProduct>
 						))}
           </NewProducts>

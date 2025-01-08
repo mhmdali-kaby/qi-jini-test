@@ -1,3 +1,5 @@
+import {AttributeType} from "./store/interfaces/product-attribute.interface.ts";
+
 export const SplashesDummy = [
 	{
 		id: 1,
@@ -234,8 +236,20 @@ export const PurchasesDummy = [
 		id: 1,
 		title: 'اسم الماركة عنوان كامل',
 		quantity: 3,
-		size: "L",
-		color: 'red',
+		attributes: [
+			{
+				id: 1,
+				title: 'اللون',
+				type: AttributeType.COLOR,
+				value: 'red',
+			},
+			{
+				id: 2,
+				title: 'القياس',
+				type: AttributeType.SIZE,
+				value: 'L',
+			}
+		],
 		status: 1,
 		price: 120000,
 		image: '/dummy/purchase.png',
@@ -244,8 +258,20 @@ export const PurchasesDummy = [
 		id: 2,
 		title: 'اسم الماركة عنوان كامل',
 		quantity: 3,
-		size: "L",
-		color: 'blue',
+		attributes: [
+			{
+				id: 1,
+				title: 'اللون',
+				type: AttributeType.COLOR,
+				value: 'blue',
+			},
+			{
+				id: 2,
+				title: 'القياس',
+				type: AttributeType.SIZE,
+				value: 'L',
+			}
+		],
 		status: 1,
 		price: 170000,
 		image: '/dummy/purchase.png',
@@ -254,8 +280,20 @@ export const PurchasesDummy = [
 		id: 3,
 		title: 'اسم الماركة عنوان كامل',
 		quantity: 3,
-		size: "L",
-		color: 'black',
+		attributes: [
+			{
+				id: 1,
+				title: 'اللون',
+				type: AttributeType.COLOR,
+				value: 'black',
+			},
+			{
+				id: 2,
+				title: 'القياس',
+				type: AttributeType.SIZE,
+				value: 'L',
+			}
+		],
 		status: 1,
 		price: 125000,
 		image: '/dummy/purchase.png',
@@ -264,8 +302,20 @@ export const PurchasesDummy = [
 		id: 4,
 		title: 'اسم الماركة عنوان كامل',
 		quantity: 3,
-		size: "L",
-		color: 'red',
+		attributes: [
+			{
+				id: 1,
+				title: 'اللون',
+				type: AttributeType.COLOR,
+				value: 'red',
+			},
+			{
+				id: 2,
+				title: 'القياس',
+				type: AttributeType.SIZE,
+				value: 'L',
+			}
+		],
 		status: 1,
 		price: 120000,
 		image: '/dummy/purchase.png',
@@ -274,8 +324,20 @@ export const PurchasesDummy = [
 		id: 5,
 		title: 'اسم الماركة عنوان كامل',
 		quantity: 3,
-		size: "L",
-		color: 'yellow',
+		attributes: [
+			{
+				id: 1,
+				title: 'اللون',
+				type: AttributeType.COLOR,
+				value: 'yellow',
+			},
+			{
+				id: 2,
+				title: 'القياس',
+				type: AttributeType.SIZE,
+				value: 'L',
+			}
+		],
 		status: 1,
 		price: 120000,
 		image: '/dummy/purchase.png',
@@ -284,8 +346,20 @@ export const PurchasesDummy = [
 		id: 6,
 		title: 'اسم الماركة عنوان كامل',
 		quantity: 3,
-		size: "L",
-		color: 'red',
+		attributes: [
+			{
+				id: 1,
+				title: 'اللون',
+				type: AttributeType.COLOR,
+				value: 'red',
+			},
+			{
+				id: 2,
+				title: 'القياس',
+				type: AttributeType.SIZE,
+				value: 'L',
+			}
+		],
 		status: 1,
 		price: 50000,
 		image: '/dummy/purchase.png',
@@ -365,3 +439,65 @@ export const DiscountDummy = [
 		border_color: '#F97316',
 	},
 ];
+
+export const ProductDummy = {
+	id: 1,
+	image: '/dummy/product-details.png',
+	title: 'سماعة ايربودز',
+	type: 'سماعة',
+	description: 'وصف يخص هذه السلعة بكامل تفاصيلها مع امكانية اضافة جدول يحتوي على خصائص المادة وصف يخص هذه السلعة بكامل تفاصيلها مع امكانية اضافة جدول يحتوي على خصائص المادة',
+	rate: 4.5,
+	rate_count: 100,
+	price: 250000,
+	attributes: [
+		{
+			id: 1,
+			title: 'اللون',
+			type: AttributeType.COLOR,
+			values: [
+				{
+					id: 1,
+					value: 'red',
+					available_count: 10,
+				},
+				{
+					id: 2,
+					value: 'blue',
+					available_count: 11,
+				},
+				{
+					id: 3,
+					value: 'green',
+					available_count: 11,
+				},
+				{
+					id: 4,
+					value: 'yellow',
+					available_count: 11,
+				},
+			]
+		},
+		{
+			id: 1,
+			title: 'القياس',
+			type: AttributeType.SIZE,
+			values: [
+				{
+					id: 1,
+					value: 'S',
+					available_count: 10,
+				},
+				{
+					id: 2,
+					value: 'M',
+					available_count: 11,
+				},
+				{
+					id: 2,
+					value: 'L',
+					available_count: 11,
+				},
+			]
+		},
+	]
+};
