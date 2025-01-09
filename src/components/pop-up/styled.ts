@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const PopUpContainer = styled.div`
-		width: 100%;
-		display: flex;
-		justify-content: center;
-		.pop-up {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .pop-up {
         background: #fff;
         border-radius: 20px;
         width: 75%;
@@ -13,6 +14,7 @@ export const PopUpContainer = styled.div`
         align-items: center;
         gap: 12px;
         padding: 32px 24px;
+
         .pup-up-button {
             border-radius: 30px;
             background: ${({theme}) => theme.colors.orange};
@@ -23,9 +25,9 @@ export const PopUpContainer = styled.div`
             font-weight: 700;
             line-height: 150%;
             padding: 5px 16px 2px;
-		        border: none;
+            border: none;
         }
-		}
+    }
 `;
 
 export const PopUpTitle = styled.span`

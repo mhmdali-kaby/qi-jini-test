@@ -501,3 +501,46 @@ export const ProductDummy = {
 		},
 	]
 };
+
+export const CartItemsDummy = [
+	{
+		id: 1,
+		title: 'حذاء رياضي',
+		type: 'حذاء',
+		image: '/dummy/product-details.png',
+		count: 2,
+		price: 250000
+	},
+	{
+		id: 2,
+		title: 'حذاء رياضي',
+		type: 'حذاء',
+		image: '/dummy/product-details.png',
+		count: 4,
+		price: 30000
+	},
+	{
+		id: 3,
+		title: 'حذاء رياضي',
+		type: 'حذاء',
+		image: '/dummy/product-details.png',
+		count: 2,
+		price: 40000
+	},
+	{
+		id: 4,
+		title: 'حذاء رياضي',
+		type: 'حذاء',
+		image: '/dummy/product-details.png',
+		count: 2,
+		price: 50000
+	},
+	{
+		id: 5,
+		title: 'حذاء رياضي',
+		type: 'حذاء',
+		image: '/dummy/product-details.png',
+		count: 2,
+		price: 550000
+	},
+];

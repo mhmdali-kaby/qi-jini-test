@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import {motion} from "framer-motion";
 import React from "react";
 import {BackdropContainer} from "./styled.ts";
 
@@ -7,7 +7,7 @@ interface BackdropProps {
 	onClick: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
 }
 
-const Backdrop: React.FC<BackdropProps> = ({ children, onClick }) => {
+const Backdrop: React.FC<BackdropProps> = ({children, onClick}) => {
 
 	return (
 		<BackdropContainer>

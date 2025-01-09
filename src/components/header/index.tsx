@@ -16,7 +16,7 @@ import {
 } from "./styled.ts";
 import {Link, useNavigate} from "react-router-dom";
 import {getStoreInfo} from "../../store/actions/store.actions.ts";
-import {HomeRoute, NotificationsRoute} from "../../router/routes.ts";
+import {CartRoute, NotificationsRoute} from "../../router/routes.ts";
 import CartIcon from "../icons/cart.icon.tsx";
 import NotificationIcon from "../icons/notification.icon.tsx";
 import LeftArrowIcon from "../icons/left-arrow.icon.tsx";
@@ -27,7 +27,7 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({showIcon}) => {
-	const { t } = useTranslation();
+	const {t} = useTranslation();
 	const dispatch = useDispatch<AppDispatch>();
 	const {count: cartCount} = useSelector((state: RootState) => state.cartReducer);
 	const {count: notificationCount} = useSelector((state: RootState) => state.notificationsReducer);
@@ -49,7 +49,7 @@ const Header: React.FC<HeaderProps> = ({showIcon}) => {
 			<HeaderLeftIcons>
 				{showIcon ?
 					<>
-						<Link to={HomeRoute}>
+						<Link to={CartRoute}>
 							<HeaderIcon $padding="18">
 								<CartIcon/>
 								<HeaderIconCounter $small={false}>
@@ -80,7 +80,7 @@ const Header: React.FC<HeaderProps> = ({showIcon}) => {
 				{store &&
           <HeaderRightContent>
             <HeaderRightContentWelcome>
-	            {t('welcome_to')}
+							{t('welcome_to')}
             </HeaderRightContentWelcome>
             <HeaderRightContentName>
 							{store.name}

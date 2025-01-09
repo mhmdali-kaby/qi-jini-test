@@ -10,7 +10,7 @@ import Nav from "../../components/nav";
 import {useTranslation} from "react-i18next";
 
 const CategoriesView: React.FC = () => {
-	const { t } = useTranslation();
+	const {t} = useTranslation();
 	const dispatch = useDispatch<AppDispatch>();
 	const {data, loading} = useSelector((state: RootState) => state.categoriesReducer);
 

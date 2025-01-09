@@ -53,9 +53,10 @@ import Nav from "../../components/nav";
 import {Link} from "react-router-dom";
 import {ProductRoute} from "../../router/routes.ts";
 import {useTranslation} from "react-i18next";
+import {CURRENCY} from "../../utils/constants.ts";
 
 const HomeView: React.FC = () => {
-	const { t } = useTranslation();
+	const {t} = useTranslation();
 	const dispatch = useDispatch<AppDispatch>();
 	const {
 		offers,
@@ -125,7 +126,7 @@ const HomeView: React.FC = () => {
 											<div>
 												<HomeProductPrice>
 													{formatPrice(offer.price)}
-													<span>IQD</span>
+													<span>{CURRENCY}</span>
 												</HomeProductPrice>
 												{offer.old_price &&
                           <HomeProductOldPrice>
@@ -182,7 +183,7 @@ const HomeView: React.FC = () => {
 										<div>
 											<NewProductPrice>
 												<div>{formatPrice(product.price)}</div>
-												<span>IQD</span>
+												<span>{CURRENCY}</span>
 											</NewProductPrice>
 											{product.old_price &&
                         <NewProductOldPrice>
@@ -228,7 +229,7 @@ const HomeView: React.FC = () => {
 											<div>
 												<HomeProductPrice className='small'>
 													{formatPrice(offer.price)}
-													<span>IQD</span>
+													<span>{CURRENCY}</span>
 												</HomeProductPrice>
 												{offer.old_price &&
                           <HomeProductOldPrice className='small'>
@@ -285,7 +286,7 @@ const HomeView: React.FC = () => {
 										<div>
 											<NewProductPrice>
 												<div>{formatPrice(product.price)}</div>
-												<span>IQD</span>
+												<span>{CURRENCY}</span>
 											</NewProductPrice>
 											{product.old_price &&
                         <NewProductOldPrice>

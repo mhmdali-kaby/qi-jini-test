@@ -2,6 +2,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import HomeView from "../views/home";
 import SplashView from "../views/splash";
 import {
+	CartRoute,
 	CategoriesRoute,
 	DiscountsRoute,
 	HomeRoute,
@@ -17,6 +18,7 @@ import PurchasesView from "../views/purchases";
 import ProfileView from "../views/profile";
 import DiscountsView from "../views/discounts";
 import ProductView from "../views/product";
+import CartView from "../views/cart";
 
 function Router() {
 	return (
@@ -30,6 +32,7 @@ function Router() {
 				<Route path={PurchasesRoute} element={<PurchasesView/>}/>
 				<Route path={ProfileRoute} element={<ProfileView/>}/>
 				<Route path={ProductRoute} element={<ProductView/>}/>
+				<Route path={CartRoute} element={<CartView/>}/>
 			</Routes>
 		</BrowserRouter>
 	)

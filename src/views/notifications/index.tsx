@@ -16,7 +16,7 @@ import {getNotifications} from "../../store/actions/notifications.actions.ts";
 import {useTranslation} from "react-i18next";
 
 const NotificationsView: React.FC = () => {
-	const { t } = useTranslation();
+	const {t} = useTranslation();
 	const dispatch = useDispatch<AppDispatch>();
 	const {notifications, loading} = useSelector((state: RootState) => state.notificationsReducer);
 

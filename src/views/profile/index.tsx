@@ -31,7 +31,7 @@ import CommunityLinkIcon from "../../components/icons/community-link.icon.tsx";
 import {useTranslation} from "react-i18next";
 
 const ProfileView: React.FC = () => {
-	const { t } = useTranslation();
+	const {t} = useTranslation();
 	const dispatch = useDispatch<AppDispatch>();
 	const {info, loading} = useSelector((state: RootState) => state.profileReducer);
 
@@ -70,7 +70,7 @@ const ProfileView: React.FC = () => {
                 <LinkLeftIcon/>
                 <RightLinkContent>
                   <LinkTitle>
-	                  {t('personal_information')}
+										{t('personal_information')}
                   </LinkTitle>
                   <ProfileLinkIcon/>
                 </RightLinkContent>
@@ -79,7 +79,7 @@ const ProfileView: React.FC = () => {
                 <LinkLeftIcon/>
                 <RightLinkContent>
                   <LinkTitle>
-	                  {t('orders_list')}
+										{t('orders_list')}
                   </LinkTitle>
                   <OrdersLinkIcon/>
                 </RightLinkContent>
@@ -88,7 +88,7 @@ const ProfileView: React.FC = () => {
                 <LinkLeftIcon/>
                 <RightLinkContent>
                   <LinkTitle>
-	                  {t('favorites')}
+										{t('favorites')}
                   </LinkTitle>
                   <FavoritesLinkIcon/>
                 </RightLinkContent>
@@ -97,7 +97,7 @@ const ProfileView: React.FC = () => {
                 <LinkLeftIcon/>
                 <RightLinkContent>
                   <LinkTitle>
-	                  {t('addresses')}
+										{t('addresses')}
                   </LinkTitle>
                   <LocationsLinkIcon/>
                 </RightLinkContent>
@@ -108,7 +108,7 @@ const ProfileView: React.FC = () => {
                 <LinkLeftIcon/>
                 <RightLinkContent>
                   <LinkTitle>
-	                  {t('common_questions')}
+										{t('common_questions')}
                   </LinkTitle>
                   <CommonQuestionsLinkIcon/>
                 </RightLinkContent>
@@ -117,7 +117,7 @@ const ProfileView: React.FC = () => {
                 <LinkLeftIcon/>
                 <RightLinkContent>
                   <LinkTitle>
-	                  {t('terms_and_conditions')}
+										{t('terms_and_conditions')}
                   </LinkTitle>
                   <PrivacyPolicyLinkIcon/>
                 </RightLinkContent>
@@ -126,7 +126,7 @@ const ProfileView: React.FC = () => {
                 <LinkLeftIcon/>
                 <RightLinkContent>
                   <LinkTitle>
-	                  {t('community')}
+										{t('community')}
                   </LinkTitle>
                   <CommunityLinkIcon/>
                 </RightLinkContent>

@@ -68,7 +68,8 @@ export const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
         font-style: normal;
     }
 
-    body {
+    html, body {
+        height: 100%;
         margin: 0;
         font-family: 'Ping AR + LT', sans-serif;
     }

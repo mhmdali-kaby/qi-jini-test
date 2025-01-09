@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import {motion} from "framer-motion";
 import Backdrop from "../backdrop";
 import React from "react";
 import {Link} from "react-router-dom";
@@ -34,7 +34,7 @@ interface BackdropProps {
 	link?: string
 }
 
-const PopUp: React.FC<BackdropProps> = ({ handleClose, title, description, icon, button_text, link }) => {
+const PopUp: React.FC<BackdropProps> = ({handleClose, title, description, icon, button_text, link}) => {
 
 	return (
 		<Backdrop onClick={handleClose}>

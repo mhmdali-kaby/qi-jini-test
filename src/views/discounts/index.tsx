@@ -10,7 +10,7 @@ import {Discount, DiscountContainer, Discounts, DiscountsGroupTitle} from "./sty
 import {useTranslation} from "react-i18next";
 
 const DiscountsView: React.FC = () => {
-	const { t } = useTranslation();
+	const {t} = useTranslation();
 	const dispatch = useDispatch<AppDispatch>();
 	const {data, loading} = useSelector((state: RootState) => state.discountsReducer);
 

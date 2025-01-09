@@ -154,19 +154,20 @@ export const AddToCartContainer = styled.div`
 `;
 
 export const AddToCart = styled.div`
-		width: 85%;
-		margin: auto;
+    width: 85%;
+    margin: auto;
     border-radius: 14px;
     background: ${({theme}) => theme.colors.orange};
-		padding: 10px;
+    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-		.add-to-cart {
+
+    .add-to-cart {
         padding: 0;
         border: none;
         border-radius: 12px;
-		}
+    }
 `;
 
 export const AddToCartPrice = styled.div`

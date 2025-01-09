@@ -301,10 +301,11 @@ export const NewProduct = styled.div`
     justify-content: space-between;
     margin-bottom: 14px;
     filter: drop-shadow(0px 3px 10px rgba(0, 0, 0, 0.12));
-		.image-container {
-				z-index: 2;
-				display: flex;
-		}
+
+    .image-container {
+        z-index: 2;
+        display: flex;
+    }
 `;
 
 export const NewProductImage = styled.img`

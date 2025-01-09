@@ -8,6 +8,7 @@ export const GetAllDiscounts = 'discounts';
 export const GetProduct = 'products/{id}';
 export const GetHomeFilterCategories = 'home-filter-categories';
 export const GetCartCount = 'cart-count';
+export const GetCartItems = 'cart-items';
 export const GetNotificationsCount = 'notifications-count';
 export const GetNotifications = 'notifications';
 export const GetPurchases = 'purchases';

@@ -3,6 +3,7 @@
     "description": "الوصف",
     "add_to_cart": "أضافة الى السلة",
     "product": "منتج",
+    "products": "منتجات",
     "show_all": "عرض الكل",
     "order_now": "اطلب الان",
     "rate": "مراجعة",
@@ -24,8 +25,13 @@
     "new_products": "منتجات جديدة",
     "best_offers": "افضل العروض",
     "notifications": "الاشعارات",
+    "apply": "تطبيق",
+    "count": "العدد",
+    "complete_and_pay": "الاكمال و الدفع",
+    "promo_code": "رمز التخفيض",
     "product_added_to_cart_title": "تم الأضافة",
     "product_added_to_cart_description": "تم أضافة المنتج الى السلة بنجاح",
-    "product_added_to_cart_close_text": "اتمام الشراء"
+    "product_added_to_cart_close_text": "اتمام الشراء",
+    "cart": "سلة التسوق"
   }
 }

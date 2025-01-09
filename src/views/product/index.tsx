@@ -1,11 +1,20 @@
 import React, {useEffect, useState} from 'react';
 import {Container} from "../../styles/styled.ts";
 import {
-	AddToCart, AddToCartButton, AddToCartContainer, AddToCartPrice, AddToCartPriceCurrency, AddToCartPriceValue,
+	AddToCart,
+	AddToCartButton,
+	AddToCartContainer,
+	AddToCartPrice,
+	AddToCartPriceCurrency,
+	AddToCartPriceValue,
 	ProductAttribute,
-	ProductAttributesContainer, ProductAttributeTitle,
+	ProductAttributesContainer,
+	ProductAttributeTitle,
 	ProductContainer,
-	ProductCount, ProductDescription, ProductDescriptionTitle, ProductDescriptionValue,
+	ProductCount,
+	ProductDescription,
+	ProductDescriptionTitle,
+	ProductDescriptionValue,
 	ProductImageContainer,
 	ProductRate,
 	ProductRateCount,
@@ -27,14 +36,15 @@ import SizeProductAttribute from "../../components/product/product-attribute/siz
 import {formatPrice} from "../../utils/numbers.ts";
 import AddProductToCart from "../../components/icons/add-product-to-cart.icon.tsx";
 import {useTranslation} from "react-i18next";
-import { motion } from "framer-motion";
+import {motion} from "framer-motion";
 import PopUp from "../../components/pop-up";
 import ProductAddedToCart from "../../components/icons/product-added-to-cart.icon.tsx";
 import {CartRoute} from "../../router/routes.ts";
+import {CURRENCY} from "../../utils/constants.ts";
 
 const ProductView: React.FC = () => {
-	const { id } = useParams();
-	const { t } = useTranslation();
+	const {id} = useParams();
+	const {t} = useTranslation();
 	const dispatch = useDispatch<AppDispatch>();
 	const {data, loading} = useSelector((state: RootState) => state.productReducer);
 	const [count, setCount] = useState(1);
@@ -128,7 +138,7 @@ const ProductView: React.FC = () => {
 							<AddToCart>
 								<AddToCartPrice>
 									<AddToCartPriceValue>{formatPrice(data.price * count)}</AddToCartPriceValue>
-									<AddToCartPriceCurrency>IQD</AddToCartPriceCurrency>
+									<AddToCartPriceCurrency>{CURRENCY}</AddToCartPriceCurrency>
 								</AddToCartPrice>
 								<motion.button
 									whileHover={{scale: 1.1}}
@@ -140,22 +150,22 @@ const ProductView: React.FC = () => {
 										<span>
 											{t('add_to_cart')}
 										</span>
-									<AddProductToCart/>
-								</AddToCartButton>
-							</motion.button>
-						</AddToCart>
-					</AddToCartContainer>
+										<AddProductToCart/>
+									</AddToCartButton>
+								</motion.button>
+							</AddToCart>
+						</AddToCartContainer>
 					</ProductContainer>
 				)}
 				{popUpOpen &&
-					<PopUp
-						title={t('product_added_to_cart_title')}
-						description={t('product_added_to_cart_description')}
-						icon={<ProductAddedToCart/>}
+          <PopUp
+            title={t('product_added_to_cart_title')}
+            description={t('product_added_to_cart_description')}
+            icon={<ProductAddedToCart/>}
             button_text={t('product_added_to_cart_close_text')}
-						handleClose={closePopUp}
-						link={CartRoute}
-					/>
+            handleClose={closePopUp}
+            link={CartRoute}
+          />
 				}
 			</Container>
 		</>

@@ -10,7 +10,6 @@ export const getProduct = createAsyncThunk(
 		try {
 			// const response = await api.get(GetProduct.replace('{id}', id.toString()));
 			// return await response.data;
-			console.log(id)
 			return ProductDummy;
 		} catch (err) {
 			const error = err as AxiosError;

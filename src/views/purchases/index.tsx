@@ -29,9 +29,10 @@ import CompleteIcon from "../../components/icons/complete.icon.tsx";
 import {formatPrice} from "../../utils/numbers.ts";
 import {useTranslation} from "react-i18next";
 import {AttributeType} from "../../store/interfaces/product-attribute.interface.ts";
+import {CURRENCY} from "../../utils/constants.ts";
 
 const PurchasesView: React.FC = () => {
-	const { t } = useTranslation();
+	const {t} = useTranslation();
 	const dispatch = useDispatch<AppDispatch>();
 	const {data, loading} = useSelector((state: RootState) => state.purchasesReducer);
 
@@ -85,7 +86,7 @@ const PurchasesView: React.FC = () => {
 									<PurchaseBottom>
 										<PurchasePrice>
 											<div>{formatPrice(item.price)}</div>
-											<span>IQD</span>
+											<span>{CURRENCY}</span>
 										</PurchasePrice>
 										<PurchaseStatus>
 											<div>{t('delivered')}</div>
