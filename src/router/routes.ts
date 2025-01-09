@@ -6,3 +6,4 @@ export const CategoriesRoute = '/categories';
 export const DiscountsRoute = '/discounts';
 export const PurchasesRoute = '/purchases';
 export const ProductRoute = '/products/:id';
+export const CartRoute = '/cart';

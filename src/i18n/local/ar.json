@@ -23,6 +23,9 @@
     "special_offers": "عروض مميزة",
     "new_products": "منتجات جديدة",
     "best_offers": "افضل العروض",
-    "notifications": "الاشعارات"
+    "notifications": "الاشعارات",
+    "product_added_to_cart_title": "تم الأضافة",
+    "product_added_to_cart_description": "تم أضافة المنتج الى السلة بنجاح",
+    "product_added_to_cart_close_text": "اتمام الشراء"
   }
 }

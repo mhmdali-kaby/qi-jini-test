@@ -78,7 +78,7 @@ export const OfferDescription = styled.div`
 
 export const OfferButton = styled.div`
     border-radius: 30px;
-    background: #F97316;
+    background: ${({theme}) => theme.colors.orange};
     color: #FFF;
     font-size: 12px;
     font-style: normal;

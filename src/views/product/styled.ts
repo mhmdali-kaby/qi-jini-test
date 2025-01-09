@@ -162,6 +162,11 @@ export const AddToCart = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+		.add-to-cart {
+        padding: 0;
+        border: none;
+        border-radius: 12px;
+		}
 `;
 
 export const AddToCartPrice = styled.div`
