@@ -28,10 +28,21 @@
     "apply": "تطبيق",
     "count": "العدد",
     "complete_and_pay": "الاكمال و الدفع",
+    "complete": "الاكمال",
     "promo_code": "رمز التخفيض",
     "product_added_to_cart_title": "تم الأضافة",
     "product_added_to_cart_description": "تم أضافة المنتج الى السلة بنجاح",
     "product_added_to_cart_close_text": "اتمام الشراء",
-    "cart": "سلة التسوق"
+    "cart": "سلة التسوق",
+    "cash_on_delivery": "الدفع عند الأستلام",
+    "installment_purchase": "الشراء بالتقسيط",
+    "e_payment": "دفع الكتروني",
+    "location": "العنوان",
+    "choose_location": "اختر العنوان",
+    "location_additional_information": "معلومات اخرى عن العنوان",
+    "search": "بحث",
+    "phone_number": "رقم الهاتف",
+    "nearest_point": "اقرب نقطة دالة",
+    "location_additional_information_note": "التوصيل داخل بغداد 5000 دينار و جميع المحافظات 6000"
   }
 }

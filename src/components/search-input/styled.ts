@@ -9,11 +9,12 @@ export const InputContainer = styled.label`
 `
 
 export const Input = styled.input`
-		background: transparent;
+    background: transparent;
     width: 100%;
     border: none;
-		direction: rtl;
-		&:focus {
-				outline: none;
-		}
+    direction: rtl;
+
+    &:focus {
+        outline: none;
+    }
 `

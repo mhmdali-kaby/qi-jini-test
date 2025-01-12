@@ -7,3 +7,6 @@ export const DiscountsRoute = '/discounts';
 export const PurchasesRoute = '/purchases';
 export const ProductRoute = '/products/:id';
 export const CartRoute = '/cart';
+export const PaymentRoute = '/payment';
+export const OrderTracking = '/order-tracking';
+export const AddLocation = '/add-location';

@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const CartContainer = styled.div`
-		overflow-x: hidden;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin: 24px 0 0;
-    min-height: 85vh;
+    min-height: 84vh;
     gap: 32px;
 
     .cart-content {
@@ -34,11 +34,12 @@ export const CartItems = styled.div`
 export const CartItemContainer = styled.div`
     box-shadow: 0 11px 24px 0 rgba(0, 0, 0, 0.10);
     border-radius: 14px;
-		position: relative;
+    position: relative;
     background: ${({theme}) => theme.colors.orange};
-		.cart-item {
+
+    .cart-item {
         position: relative;
-		}
+    }
 `;
 
 export const CartItemTrash = styled.div`

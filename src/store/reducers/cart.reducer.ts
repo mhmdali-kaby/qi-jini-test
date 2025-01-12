@@ -1,5 +1,6 @@
 import {createSlice} from '@reduxjs/toolkit';
 import {
+	changePaymentMethodAction,
 	decrementCartItemCountAction,
 	getCartCount,
 	getCartItems,
@@ -15,6 +16,7 @@ const cartSlice = createSlice({
 		increaseCartItemCount: increaseCartItemCountAction,
 		decrementCartItemCount: decrementCartItemCountAction,
 		offlineCartItemsInfo: offlineCartItemsInfoAction,
+		changePaymentMethod: changePaymentMethodAction,
 	},
 	extraReducers: (builder) => {
 		builder
@@ -49,5 +51,10 @@ const cartSlice = createSlice({
 	},
 });
 
-export const {increaseCartItemCount, decrementCartItemCount, offlineCartItemsInfo} = cartSlice.actions;
+export const {
+	increaseCartItemCount,
+	decrementCartItemCount,
+	offlineCartItemsInfo,
+	changePaymentMethod
+} = cartSlice.actions;
 export default cartSlice.reducer;

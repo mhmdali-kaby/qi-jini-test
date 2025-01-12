@@ -60,3 +60,7 @@ export const offlineCartItemsInfoAction = (state: CartState) => {
 	}
 	state.offline_price = price;
 }
+
+export const changePaymentMethodAction = (state: CartState, action: PayloadAction<number>) => {
+	state.selected_payment_type = action.payload
+}

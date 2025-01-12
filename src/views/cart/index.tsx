@@ -4,7 +4,8 @@ import {
 	CartCompleteAndPay,
 	CartContainer,
 	CartCount,
-	CartItem, CartItemContainer,
+	CartItem,
+	CartItemContainer,
 	CartItemCount,
 	CartItemDataContainer,
 	CartItemImageContainer,
@@ -12,7 +13,8 @@ import {
 	CartItemPriceContainer,
 	CartItems,
 	CartItemTitle,
-	CartItemTitleContainer, CartItemTrash,
+	CartItemTitleContainer,
+	CartItemTrash,
 	CartItemType,
 	CartPrice,
 	CartPriceContainer,
@@ -35,6 +37,8 @@ import {
 import {CURRENCY} from "../../utils/constants.ts";
 import CompleteAndPayIcon from "../../components/icons/complete-and-pay.icon.tsx";
 import WhiteTrashIcon from "../../components/icons/white-trash.icon.tsx";
+import {Link} from "react-router-dom";
+import {PaymentRoute} from "../../router/routes.ts";
 
 const CartView: React.FC = () => {
 	const {t} = useTranslation();
@@ -78,11 +82,11 @@ const CartView: React.FC = () => {
 								<CartItems>
 									{items.map((item, index) => (
 										<CartItemContainer key={index}>
-                      <CartItemTrash>
+											<CartItemTrash>
 												<span>
 													<WhiteTrashIcon/>
 												</span>
-                      </CartItemTrash>
+											</CartItemTrash>
 											<motion.div
 												className="cart-item"
 												drag="x"
@@ -143,12 +147,14 @@ const CartView: React.FC = () => {
 								<span>{t('products')}</span>
 							</CartCount>
 						</CartPriceContainer>
-						<CartCompleteAndPay>
-							<CompleteAndPayIcon/>
-							<span>
+						<Link to={PaymentRoute}>
+							<CartCompleteAndPay>
+								<CompleteAndPayIcon/>
+								<span>
 								{t('complete_and_pay')}
 							</span>
-						</CartCompleteAndPay>
+							</CartCompleteAndPay>
+						</Link>
 					</CompleteButtonContainer>
 				</CartContainer>
 			</Container>
