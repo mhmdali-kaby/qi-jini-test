@@ -2,7 +2,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import HomeView from "../views/home";
 import SplashView from "../views/splash";
 import {
-	AddLocation,
+	AddLocationRoute,
 	CartRoute,
 	CategoriesRoute,
 	DiscountsRoute,
@@ -11,12 +11,12 @@ import {
 	PaymentRoute,
 	ProductRoute,
 	ProfileRoute,
-	PurchasesRoute,
+	OrdersRoute,
 	SplashRoute
 } from "./routes.ts";
 import CategoriesView from "../views/categories";
 import NotificationsView from "../views/notifications";
-import PurchasesView from "../views/purchases";
+import OrdersView from "../views/orders";
 import ProfileView from "../views/profile";
 import DiscountsView from "../views/discounts";
 import ProductView from "../views/product";
@@ -33,12 +33,12 @@ function Router() {
 				<Route path={HomeRoute} element={<HomeView/>}/>
 				<Route path={CategoriesRoute} element={<CategoriesView/>}/>
 				<Route path={DiscountsRoute} element={<DiscountsView/>}/>
-				<Route path={PurchasesRoute} element={<PurchasesView/>}/>
+				<Route path={OrdersRoute} element={<OrdersView/>}/>
 				<Route path={ProfileRoute} element={<ProfileView/>}/>
 				<Route path={ProductRoute} element={<ProductView/>}/>
 				<Route path={CartRoute} element={<CartView/>}/>
 				<Route path={PaymentRoute} element={<PaymentView/>}/>
-				<Route path={AddLocation} element={<AddLocationView/>}/>
+				<Route path={AddLocationRoute} element={<AddLocationView/>}/>
 			</Routes>
 		</BrowserRouter>
 	)

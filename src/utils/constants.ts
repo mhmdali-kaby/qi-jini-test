@@ -21,3 +21,5 @@ export const PAYMENT_METHODS = [
 		icon: QiIcon
 	},
 ];
+
+export const INITIAL_POSITION = {lat: 33.3152, lng: 44.3661};

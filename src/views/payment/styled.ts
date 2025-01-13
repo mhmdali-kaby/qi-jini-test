@@ -7,15 +7,16 @@ interface PaymentMethodContainerProps {
 export const PaymentContainer = styled.div`
     display: flex;
     flex-direction: column;
-		justify-content: space-between;
+    justify-content: space-between;
     margin: 24px 0 0;
     min-height: 84vh;
     gap: 32px;
-		.payment-content {
+
+    .payment-content {
         display: flex;
         flex-direction: column;
         gap: 16px;
-		}
+    }
 `;
 
 export const PaymentTitle = styled.div`
@@ -82,7 +83,7 @@ export const ChooseLocation = styled.div`
     gap: 10px;
     border-radius: 12px;
     margin-bottom: 16px;
-		color: #000;
+    color: #000;
 `;
 
 export const LocationAdditionalInformation = styled.div`

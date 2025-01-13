@@ -31,7 +31,7 @@ import {useTranslation} from "react-i18next";
 import {AttributeType} from "../../store/interfaces/product-attribute.interface.ts";
 import {CURRENCY} from "../../utils/constants.ts";
 
-const PurchasesView: React.FC = () => {
+const OrdersView: React.FC = () => {
 	const {t} = useTranslation();
 	const dispatch = useDispatch<AppDispatch>();
 	const {data, loading} = useSelector((state: RootState) => state.purchasesReducer);
@@ -104,4 +104,4 @@ const PurchasesView: React.FC = () => {
 	);
 };
 
-export default PurchasesView;
+export default OrdersView;

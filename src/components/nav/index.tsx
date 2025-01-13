@@ -5,7 +5,7 @@ import DiscountsIcon from "../icons/discounts.icon.tsx";
 import PurchasesIcon from "../icons/purchases.icon.tsx";
 import HomeIcon from "../icons/home.icon.tsx";
 import {Link, useLocation} from "react-router-dom";
-import {DiscountsRoute, HomeRoute, ProfileRoute, PurchasesRoute} from "../../router/routes.ts";
+import {DiscountsRoute, HomeRoute, ProfileRoute, OrdersRoute} from "../../router/routes.ts";
 
 const Nav: React.FC = () => {
 	const location = useLocation();
@@ -17,8 +17,8 @@ const Nav: React.FC = () => {
 			<Link to={DiscountsRoute}>
 				<DiscountsIcon isActive={location.pathname === DiscountsRoute}/>
 			</Link>
-			<Link to={PurchasesRoute}>
-				<PurchasesIcon isActive={location.pathname === PurchasesRoute}/>
+			<Link to={OrdersRoute}>
+				<PurchasesIcon isActive={location.pathname === OrdersRoute}/>
 			</Link>
 			<Link to={HomeRoute}>
 				<HomeIcon isActive={location.pathname === HomeRoute}/>

@@ -43,6 +43,13 @@
     "search": "بحث",
     "phone_number": "رقم الهاتف",
     "nearest_point": "اقرب نقطة دالة",
-    "location_additional_information_note": "التوصيل داخل بغداد 5000 دينار و جميع المحافظات 6000"
+    "location_additional_information_note": "التوصيل داخل بغداد 5000 دينار و جميع المحافظات 6000",
+    "add": "اضافة",
+    "add_location": "اضافة عنوان",
+    "street": "شارع",
+    "building_name": "اسم المبنى",
+    "optional": "اختياري",
+    "required": "اجباري",
+    "mark_as_default_location": "اجعل هذا عنواني الافتراضي"
   }
 }
