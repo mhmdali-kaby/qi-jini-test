@@ -119,7 +119,6 @@ export const WhatsButton = styled.a`
     font-size: 15px;
     font-style: normal;
     font-weight: 800;
-    line-height: 150%;
     align-items: center;
     padding: 6px 20px 6px 14px;
 `;
