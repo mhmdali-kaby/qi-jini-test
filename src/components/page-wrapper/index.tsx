@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {AnimatePresence, motion} from 'framer-motion';
 import Header from "../header";
 import Nav from "../nav";
@@ -27,6 +27,21 @@ const PageWrapper: React.FC<PageWrapperProps> = ({children}) => {
 		showHeaderIcon?: boolean;
 	}>({withHeader: true, withNav: true, showHeaderIcon: true});
 
+	const [isSwipeNavigation, setIsSwipeNavigation] = useState(false);
+	const previousPathname = useRef(location.pathname);
+
+	useEffect(() => {
+		const handlePopState = () => {
+			setIsSwipeNavigation(true);
+			setTimeout(() => setIsSwipeNavigation(false), 300); // Timeout matches animation duration
+		};
+
+		window.addEventListener('popstate', handlePopState);
+		return () => {
+			window.removeEventListener('popstate', handlePopState);
+		};
+	}, []);
+
 	useEffect(() => {
 		const currentConfig = Object.keys(routesConfig).find(
 			(path) => location.pathname.startsWith(path)
@@ -37,6 +52,7 @@ const PageWrapper: React.FC<PageWrapperProps> = ({children}) => {
 		} else {
 			setRouteConfig(routesConfig[currentConfig]);
 		}
+		previousPathname.current = location.pathname;
 	}, [location]);
 
 
@@ -47,7 +63,7 @@ const PageWrapper: React.FC<PageWrapperProps> = ({children}) => {
 				<AnimatePresence mode="wait">
 					<motion.div
 						variants={pageVariants}
-						initial="initial"
+						initial={isSwipeNavigation ? false : 'initial'}
 						animate="animate"
 						exit="exit"
 						transition={{type: 'keyframes', duration: 0.1}}
