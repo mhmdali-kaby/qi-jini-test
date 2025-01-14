@@ -135,7 +135,7 @@ const ProductView: React.FC = () => {
 						<AddToCartContainer>
 							<AddToCart>
 								<AddToCartPrice>
-									<AddToCartPriceValue>{formatPrice(data.price * count)}</AddToCartPriceValue>
+									<AddToCartPriceValue>{formatPrice((data.price ?? 0) * count)}</AddToCartPriceValue>
 									<AddToCartPriceCurrency>{CURRENCY}</AddToCartPriceCurrency>
 								</AddToCartPrice>
 								<motion.button
