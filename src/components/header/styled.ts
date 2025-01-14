@@ -28,7 +28,7 @@ export const HeaderIcon = styled.div<{ $padding: string }>`
     background: #fff;
     padding: ${({$padding}) => $padding}px;
     border-radius: 50%;
-    filter: drop-shadow(0px 3px 10px rgba(0, 0, 0, 0.12));
+    box-shadow: 1px 1px 20px 8px rgb(0 0 0 / 12%);
     position: relative;
 `;
 
