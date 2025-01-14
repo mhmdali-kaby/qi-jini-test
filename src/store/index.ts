@@ -5,7 +5,7 @@ import splashReducer from "./reducers/splash.reducer.ts";
 import cartReducer from "./reducers/cart.reducer.ts";
 import notificationsReducer from "./reducers/notifications.reducer.ts";
 import storeReducer from "./reducers/store.reducer.ts";
-import purchasesReducer from "./reducers/purchases.reducer.ts";
+import ordersReducer from "./reducers/orders.reducer.ts";
 import profileReducer from "./reducers/profile.reducer.ts";
 import discountsReducer from "./reducers/discounts.reducer.ts";
 import productReducer from "./reducers/product.reducer.ts";
@@ -18,7 +18,7 @@ export const store = configureStore({
 		cartReducer,
 		notificationsReducer,
 		storeReducer,
-		purchasesReducer,
+		ordersReducer,
 		profileReducer,
 		discountsReducer,
 		productReducer,

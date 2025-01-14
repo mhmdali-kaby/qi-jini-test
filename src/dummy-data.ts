@@ -108,7 +108,8 @@ export const CountDummy = {
 
 export const StoreDummy = {
 	id: 1,
-	name: 'ترند موبايل'
+	name: 'ترند موبايل',
+	phone: '+9647722687441'
 }
 
 export const HomeFilterCategoriesDummy = [
@@ -231,140 +232,161 @@ export const NotificationsDummy = [
 	},
 ];
 
-export const PurchasesDummy = [
+export const OrdersDummy = [
 	{
 		id: 1,
-		title: 'اسم الماركة عنوان كامل',
-		quantity: 3,
-		attributes: [
-			{
-				id: 1,
-				title: 'اللون',
-				type: AttributeType.COLOR,
-				value: 'red',
-			},
-			{
-				id: 2,
-				title: 'القياس',
-				type: AttributeType.SIZE,
-				value: 'L',
-			}
-		],
 		status: 1,
 		price: 120000,
-		image: '/dummy/purchase.png',
+		items: [
+			{
+				quantity: 1,
+				product: {
+					id: 1,
+					image: '/dummy/product-details.png',
+					title: 'سماعة ايربودز',
+					description: 'وصف يخص هذه السلعة بكامل تفاصيلها مع امكانية اضافة جدول يحتوي على خصائص المادة وصف يخص هذه السلعة بكامل تفاصيلها مع امكانية اضافة جدول يحتوي على خصائص المادة',
+					price: 250000,
+					attributes: [
+						{
+							id: 1,
+							title: 'اللون',
+							type: AttributeType.COLOR,
+							value: 'black'
+						},
+						{
+							id: 1,
+							title: 'القياس',
+							type: AttributeType.SIZE,
+							value: 'S'
+						},
+					]
+				}
+			}
+		]
 	},
 	{
 		id: 2,
-		title: 'اسم الماركة عنوان كامل',
-		quantity: 3,
-		attributes: [
-			{
-				id: 1,
-				title: 'اللون',
-				type: AttributeType.COLOR,
-				value: 'blue',
-			},
-			{
-				id: 2,
-				title: 'القياس',
-				type: AttributeType.SIZE,
-				value: 'L',
-			}
-		],
 		status: 1,
-		price: 170000,
-		image: '/dummy/purchase.png',
+		price: 50000,
+		items: [
+			{
+				quantity: 7,
+				product: {
+					id: 1,
+					image: '/dummy/product-details.png',
+					title: 'ملابس',
+					description: 'وصف يخص هذه السلعة بكامل تفاصيلها مع امكانية اضافة جدول يحتوي على خصائص المادة وصف يخص هذه السلعة بكامل تفاصيلها مع امكانية اضافة جدول يحتوي على خصائص المادة',
+					price: 250000,
+					attributes: [
+						{
+							id: 1,
+							title: 'اللون',
+							type: AttributeType.COLOR,
+							value: 'red'
+						},
+						{
+							id: 1,
+							title: 'القياس',
+							type: AttributeType.SIZE,
+							value: 'S'
+						},
+					]
+				}
+			}
+		]
 	},
 	{
 		id: 3,
-		title: 'اسم الماركة عنوان كامل',
-		quantity: 3,
-		attributes: [
-			{
-				id: 1,
-				title: 'اللون',
-				type: AttributeType.COLOR,
-				value: 'black',
-			},
-			{
-				id: 2,
-				title: 'القياس',
-				type: AttributeType.SIZE,
-				value: 'L',
-			}
-		],
 		status: 1,
-		price: 125000,
-		image: '/dummy/purchase.png',
-	},
-	{
-		id: 4,
-		title: 'اسم الماركة عنوان كامل',
-		quantity: 3,
-		attributes: [
+		price: 220000,
+		items: [
 			{
-				id: 1,
-				title: 'اللون',
-				type: AttributeType.COLOR,
-				value: 'red',
-			},
-			{
-				id: 2,
-				title: 'القياس',
-				type: AttributeType.SIZE,
-				value: 'L',
+				quantity: 2,
+				product: {
+					id: 1,
+					image: '/dummy/product-details.png',
+					title: 'سماعة ايربودز',
+					description: 'وصف يخص هذه السلعة بكامل تفاصيلها مع امكانية اضافة جدول يحتوي على خصائص المادة وصف يخص هذه السلعة بكامل تفاصيلها مع امكانية اضافة جدول يحتوي على خصائص المادة',
+					price: 250000,
+					attributes: [
+						{
+							id: 1,
+							title: 'اللون',
+							type: AttributeType.COLOR,
+							value: 'blue'
+						},
+						{
+							id: 1,
+							title: 'القياس',
+							type: AttributeType.SIZE,
+							value: 'S'
+						},
+					]
+				}
 			}
-		],
-		status: 1,
-		price: 120000,
-		image: '/dummy/purchase.png',
-	},
-	{
-		id: 5,
-		title: 'اسم الماركة عنوان كامل',
-		quantity: 3,
-		attributes: [
-			{
-				id: 1,
-				title: 'اللون',
-				type: AttributeType.COLOR,
-				value: 'yellow',
-			},
-			{
-				id: 2,
-				title: 'القياس',
-				type: AttributeType.SIZE,
-				value: 'L',
-			}
-		],
-		status: 1,
-		price: 120000,
-		image: '/dummy/purchase.png',
-	},
-	{
-		id: 6,
-		title: 'اسم الماركة عنوان كامل',
-		quantity: 3,
-		attributes: [
-			{
-				id: 1,
-				title: 'اللون',
-				type: AttributeType.COLOR,
-				value: 'red',
-			},
-			{
-				id: 2,
-				title: 'القياس',
-				type: AttributeType.SIZE,
-				value: 'L',
-			}
-		],
-		status: 1,
-		price: 50000,
-		image: '/dummy/purchase.png',
+		]
 	},
 ];
+
+export const OrderDummy = {
+	id: 1,
+	status: 2,
+	price: 120000,
+	pending_at: 'SUN, SEP 29, 2024 8:14 PM',
+	approved_at: 'MON, SEP 29, 2024 8:14 PM',
+	on_delivery_at: 'TUS, SEP 29, 2024 8:14 PM',
+	delivered_at: 'WEN, SEP 29, 2024 8:14 PM',
+	items: [
+		{
+			quantity: 1,
+			product: {
+				id: 1,
+				image: '/dummy/product-details.png',
+				title: 'سماعة ايربودز',
+				description: 'وصف يخص هذه السلعة بكامل تفاصيلها مع امكانية اضافة جدول يحتوي على خصائص المادة وصف يخص هذه السلعة بكامل تفاصيلها مع امكانية اضافة جدول يحتوي على خصائص المادة',
+				price: 250000,
+				attributes: [
+					{
+						id: 1,
+						title: 'اللون',
+						type: AttributeType.COLOR,
+						value: 'black'
+					},
+					{
+						id: 1,
+						title: 'القياس',
+						type: AttributeType.SIZE,
+						value: 'S'
+					},
+				]
+			}
+		},
+		{
+			quantity: 2,
+			product: {
+				id: 2,
+				image: '/dummy/product-details.png',
+				title: 'ملابس',
+				description: 'وصف يخص هذه السلعة بكامل تفاصيلها مع امكانية اضافة جدول يحتوي على خصائص المادة وصف يخص هذه السلعة بكامل تفاصيلها مع امكانية اضافة جدول يحتوي على خصائص المادة',
+				price: 250000,
+				attributes: [
+					{
+						id: 1,
+						title: 'اللون',
+						type: AttributeType.COLOR,
+						value: 'red'
+					},
+					{
+						id: 1,
+						title: 'القياس',
+						type: AttributeType.SIZE,
+						value: 'S'
+					},
+				]
+			}
+		}
+	]
+};
 
 export const ProfileInfoDummy = {
 	id: 1234,

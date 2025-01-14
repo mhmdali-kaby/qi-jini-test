@@ -13,7 +13,6 @@ import {
 	PaymentMethodTitle,
 	PaymentTitle
 } from "./styled.ts";
-import Header from "../../components/header";
 import {useDispatch, useSelector} from "react-redux";
 import {AppDispatch, RootState} from "../../store";
 import {getAllCategories} from "../../store/actions/categories.actions.ts";
@@ -22,7 +21,7 @@ import {PAYMENT_METHODS} from "../../utils/constants.ts";
 import {changePaymentMethod} from "../../store/reducers/cart.reducer.ts";
 import LocationIcon from "../../components/icons/location.icon.tsx";
 import InputComponent from "../../components/input";
-import {AddLocationRoute, OrderRoute} from "../../router/routes.ts";
+import {AddLocationRoute, OrderDetailsRoute} from "../../router/routes.ts";
 import {Link, useNavigate} from "react-router-dom";
 
 const PaymentView: React.FC = () => {
@@ -40,12 +39,11 @@ const PaymentView: React.FC = () => {
 	}
 
 	const createOrder = () => {
-		navigate(OrderRoute.replace(':id', "1"))
+		navigate(OrderDetailsRoute.replace(':id', "1"))
 	}
 
 	return (
 		<>
-			<Header/>
 			<Container>
 				<PaymentContainer>
 					<div className='payment-content'>

@@ -1,17 +1,17 @@
 import React, {useState} from 'react';
 import {Container} from "../../styles/styled.ts";
-import Header from "../../components/header";
 import {useTranslation} from "react-i18next";
 import {
 	AddLocationButton,
 	AddLocationContainer,
-	AddLocationTitle, ChangeMapContainer,
+	AddLocationTitle,
+	ChangeMapContainer,
 	CheckBoxContainer,
 	InputContainer,
 	InputLabel
 } from "./styled.ts";
 import InputComponent from "../../components/input";
-import {MapContainer, TileLayer, Marker, useMapEvents} from "react-leaflet";
+import {MapContainer, Marker, TileLayer, useMapEvents} from "react-leaflet";
 import L from "leaflet";
 import {INITIAL_POSITION} from "../../utils/constants.ts";
 import "leaflet/dist/leaflet.css";
@@ -20,7 +20,7 @@ import ReactDOMServer from "react-dom/server";
 import {useNavigate} from "react-router-dom";
 
 const markerIcon = L.divIcon({
-	html: ReactDOMServer.renderToString(<MapMarkerIcon />),
+	html: ReactDOMServer.renderToString(<MapMarkerIcon/>),
 	className: "",
 });
 
@@ -37,7 +37,7 @@ const AddLocationView: React.FC = () => {
 			},
 		});
 
-		return position ? <Marker position={position} icon={markerIcon} /> : undefined;
+		return position ? <Marker position={position} icon={markerIcon}/> : undefined;
 	};
 
 	const addLocation = () => {
@@ -46,7 +46,6 @@ const AddLocationView: React.FC = () => {
 
 	return (
 		<>
-			<Header/>
 			<Container>
 				<AddLocationContainer>
 					<div className="add-location-content">
@@ -57,7 +56,7 @@ const AddLocationView: React.FC = () => {
 									attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 									url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 								/>
-								<LocationMarker />
+								<LocationMarker/>
 							</MapContainer>
 						</ChangeMapContainer>
 						<InputContainer>

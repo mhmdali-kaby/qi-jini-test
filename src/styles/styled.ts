@@ -30,4 +30,8 @@ export const NavIconContainer = styled.div<NavIconContainerProps>`
     background: ${({$is_active}) => $is_active ? '#EEE' : 'unset'};
     padding-left: ${({$is_active}) => $is_active ? '14px' : 'unset'};
     gap: 8px;
+
+    circle, path {
+        transition: all .2s ease-in-out;
+    }
 `;

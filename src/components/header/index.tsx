@@ -24,9 +24,10 @@ import {useTranslation} from "react-i18next";
 
 interface HeaderProps {
 	showIcon?: boolean;
+	show?: boolean;
 }
 
-const Header: React.FC<HeaderProps> = ({showIcon}) => {
+const Header: React.FC<HeaderProps> = ({showIcon, show}) => {
 	const {t} = useTranslation();
 	const dispatch = useDispatch<AppDispatch>();
 	const {count: cartCount} = useSelector((state: RootState) => state.cartReducer);
@@ -45,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({showIcon}) => {
 	};
 
 	return (
-		<HeaderContainer>
+		<HeaderContainer $show={show}>
 			<HeaderLeftIcons>
 				{showIcon ?
 					<>

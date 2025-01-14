@@ -22,13 +22,12 @@ import {
 	CompleteButtonContainer,
 	PromoCode
 } from "./styled.ts";
-import Header from "../../components/header";
 import {useDispatch, useSelector} from "react-redux";
 import {AppDispatch, RootState} from "../../store";
 import {useTranslation} from "react-i18next";
 import {getCartItems} from "../../store/actions/cart.actions.ts";
 import {formatPrice} from "../../utils/numbers.ts";
-import {motion} from "framer-motion";
+import {AnimatePresence, motion} from "framer-motion";
 import {
 	decrementCartItemCount,
 	increaseCartItemCount,
@@ -72,7 +71,6 @@ const CartView: React.FC = () => {
 
 	return (
 		<>
-			<Header/>
 			<Container>
 				<CartContainer>
 					<div className='cart-content'>
@@ -87,38 +85,41 @@ const CartView: React.FC = () => {
 													<WhiteTrashIcon/>
 												</span>
 											</CartItemTrash>
-											<motion.div
-												className="cart-item"
-												drag="x"
-												dragConstraints={{left: 0, right: 50}}
-												dragElastic={0.2}
-												onDragEnd={(_, info) => handleDragEnd(item.id, info.offset.x)}
-												animate={{
-													x: trashVisible === item.id ? 50 : 0,
-												}}
-											>
-												<CartItem>
-													<CartItemImageContainer>
-														<img src={item.image} alt="item"/>
-													</CartItemImageContainer>
-													<CartItemDataContainer>
-														<CartItemTitleContainer>
-															<CartItemTitle>{item.title}</CartItemTitle>
-															<CartItemType>{item.type}</CartItemType>
-														</CartItemTitleContainer>
-														<CartItemPriceContainer>
-															<CartItemPrice>
-																{formatPrice(item.price)}
-															</CartItemPrice>
-															<CartItemCount>
-																<span onClick={() => decrementItemCount(item.id)}>-</span>
-																<span>{item.count}</span>
-																<span onClick={() => increaseItemCount(item.id)}>+</span>
-															</CartItemCount>
-														</CartItemPriceContainer>
-													</CartItemDataContainer>
-												</CartItem>
-											</motion.div>
+											<AnimatePresence mode='wait'>
+												<motion.div
+													key={index}
+													className="cart-item"
+													drag="x"
+													dragConstraints={{left: 0, right: 50}}
+													dragElastic={0.2}
+													onDragEnd={(_, info) => handleDragEnd(item.id, info.offset.x)}
+													animate={{
+														x: trashVisible === item.id ? 50 : 0,
+													}}
+												>
+													<CartItem>
+														<CartItemImageContainer>
+															<img src={item.image} alt="item"/>
+														</CartItemImageContainer>
+														<CartItemDataContainer>
+															<CartItemTitleContainer>
+																<CartItemTitle>{item.title}</CartItemTitle>
+																<CartItemType>{item.type}</CartItemType>
+															</CartItemTitleContainer>
+															<CartItemPriceContainer>
+																<CartItemPrice>
+																	{formatPrice(item.price)}
+																</CartItemPrice>
+																<CartItemCount>
+																	<span onClick={() => decrementItemCount(item.id)}>-</span>
+																	<span>{item.count}</span>
+																	<span onClick={() => increaseItemCount(item.id)}>+</span>
+																</CartItemCount>
+															</CartItemPriceContainer>
+														</CartItemDataContainer>
+													</CartItem>
+												</motion.div>
+											</AnimatePresence>
 										</CartItemContainer>
 									))}
 								</CartItems>

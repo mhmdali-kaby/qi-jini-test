@@ -1,6 +1,6 @@
 import {AttributeType} from "./product-attribute.interface.ts";
 
-export interface IPurchaseAttribute {
+export interface IOrderProductAttribute {
 	id: number;
 	title: string;
 	type: AttributeType;

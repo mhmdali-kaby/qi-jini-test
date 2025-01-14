@@ -1,6 +1,6 @@
-import {IProductAttribute} from "./product-attribute.interface.ts";
+import {IOrderProductAttribute} from "./order-product-attribute.interface.ts";
 
-export interface IProduct {
+export interface IOrderProduct {
 	id: number;
 	image: string;
 	title: string;
@@ -13,5 +13,5 @@ export interface IProduct {
 	old_price?: number | null;
 	label?: string | null;
 	label_color?: string | null;
-	attributes?: IProductAttribute[];
+	attributes?: IOrderProductAttribute[];
 }

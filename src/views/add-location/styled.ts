@@ -25,12 +25,13 @@ export const AddLocationTitle = styled.div`
 `;
 
 export const ChangeMapContainer = styled.div`
-		height: 200px;
-		>div {
-				width: 100%;
-				height: 100%;
+    height: 200px;
+
+    > div {
+        width: 100%;
+        height: 100%;
         border-radius: 18px;
-		}
+    }
 `;
 
 export const AddLocationButton = styled.div`

@@ -1,18 +1,36 @@
 import React from 'react';
 import {NavIconContainer} from "../../styles/styled.ts";
+import {useTranslation} from "react-i18next";
+import {motion} from "framer-motion";
 
-interface PurchasesIconProps {
+const textVariants = {
+	hidden: {width: 0, opacity: 0},
+	visible: {width: "auto", opacity: 1},
+};
+
+interface OrdersIconProps {
 	isActive?: boolean;
 }
 
-const PurchasesIcon: React.FC<PurchasesIconProps> = ({isActive}) => {
+const OrdersIcon: React.FC<OrdersIconProps> = ({isActive}) => {
+	const {t} = useTranslation();
 	return (
 		<NavIconContainer $is_active={isActive}>
-			{isActive &&
-        <div>
-          المشتريات
-        </div>
-			}
+			<motion.div
+				style={{
+					overflow: "hidden",
+					whiteSpace: "nowrap",
+					display: "inline-block",
+				}}
+				variants={textVariants}
+				initial="hidden"
+				animate={isActive ? "visible" : "hidden"}
+				transition={{duration: 0.2, ease: "easeInOut"}}
+			>
+				<div>
+					{t('purchases')}
+				</div>
+			</motion.div>
 			<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
 				<circle cx="15" cy="15" r="15" transform="matrix(-1 0 0 1 30 0)" fill={isActive ? "#F97316" : "#EEEEEE"}/>
 				<path fillRule="evenodd" clipRule="evenodd"
@@ -23,4 +41,4 @@ const PurchasesIcon: React.FC<PurchasesIconProps> = ({isActive}) => {
 	);
 };
 
-export default PurchasesIcon;
+export default OrdersIcon;

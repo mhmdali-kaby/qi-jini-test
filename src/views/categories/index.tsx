@@ -2,11 +2,9 @@ import React, {useEffect} from 'react';
 import {Container} from "../../styles/styled.ts";
 import SearchInput from "../../components/search-input";
 import {CategoriesContainer, Category, CategoryCount, CategoryText, CategoryTitle} from "./styled.ts";
-import Header from "../../components/header";
 import {useDispatch, useSelector} from "react-redux";
 import {AppDispatch, RootState} from "../../store";
 import {getAllCategories} from "../../store/actions/categories.actions.ts";
-import Nav from "../../components/nav";
 import {useTranslation} from "react-i18next";
 
 const CategoriesView: React.FC = () => {
@@ -20,7 +18,6 @@ const CategoriesView: React.FC = () => {
 
 	return (
 		<>
-			<Header/>
 			<Container>
 				<div>
 					<SearchInput/>
@@ -47,7 +44,6 @@ const CategoriesView: React.FC = () => {
 					</CategoriesContainer>
 				)}
 			</Container>
-			<Nav/>
 		</>
 	);
 };

@@ -1,7 +1,5 @@
 import React, {useEffect} from 'react';
-import Header from "../../components/header";
 import {Container} from "../../styles/styled.ts";
-import Nav from "../../components/nav";
 import {
 	LinkTitle,
 	ProfileContainer,
@@ -41,7 +39,6 @@ const ProfileView: React.FC = () => {
 
 	return (
 		<>
-			<Header/>
 			<Container>
 				{!loading && info &&
           <ProfileContainer>
@@ -135,7 +132,6 @@ const ProfileView: React.FC = () => {
           </ProfileContainer>
 				}
 			</Container>
-			<Nav/>
 		</>
 	);
 };

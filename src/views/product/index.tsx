@@ -24,7 +24,6 @@ import {
 	ProductTitleValue,
 	ProductType
 } from "./styled.ts";
-import Header from "../../components/header";
 import {useDispatch, useSelector} from "react-redux";
 import {AppDispatch, RootState} from "../../store";
 import {getProduct} from "../../store/actions/product.actions.ts";
@@ -73,7 +72,6 @@ const ProductView: React.FC = () => {
 
 	return (
 		<>
-			<Header/>
 			<Container>
 				{!loading && data && (
 					<ProductContainer>

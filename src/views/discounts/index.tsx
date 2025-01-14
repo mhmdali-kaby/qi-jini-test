@@ -1,10 +1,8 @@
 import React, {useEffect} from 'react';
 import {Container} from "../../styles/styled.ts";
 import SearchInput from "../../components/search-input";
-import Header from "../../components/header";
 import {useDispatch, useSelector} from "react-redux";
 import {AppDispatch, RootState} from "../../store";
-import Nav from "../../components/nav";
 import {getAllDiscounts} from "../../store/actions/discounts.actions.ts";
 import {Discount, DiscountContainer, Discounts, DiscountsGroupTitle} from "./styled.ts";
 import {useTranslation} from "react-i18next";
@@ -20,7 +18,6 @@ const DiscountsView: React.FC = () => {
 
 	return (
 		<>
-			<Header/>
 			<Container>
 				<div>
 					<SearchInput/>
@@ -46,7 +43,6 @@ const DiscountsView: React.FC = () => {
 					</DiscountContainer>
 				)}
 			</Container>
-			<Nav/>
 		</>
 	);
 };

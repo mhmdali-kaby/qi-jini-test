@@ -35,39 +35,43 @@ const SplashView: React.FC = () => {
 	};
 
 	return (
-		!loading && splashes.length > 0 ? (
-				<SplashContainer>
-					<SplashImage src={splashes[currentIndex].image}/>
-					<SplashContent>
-						<SplashTitle>
-							{splashes[currentIndex].title}
-						</SplashTitle>
-						<SplashDescription>
-							{splashes[currentIndex].description}
-						</SplashDescription>
-					</SplashContent>
-					<SplashAction>
-						<SplashDots>
-							{splashes.map((_, index) => {
-								return (
-									<SplashDot
-										$is_active={Number(currentIndex === index)}
-										onClick={() => setCurrentIndex(index)}
-										key={index}
-									/>
-								)
-							})}
-						</SplashDots>
-						<div onClick={handleNext}>
-							<RightArrowIcon/>
-						</div>
-					</SplashAction>
-				</SplashContainer>
-			)
-			:
-			(
-				<div>Loading</div>
-			)
+		<>
+			{
+				!loading && splashes.length > 0 ? (
+						<SplashContainer>
+							<SplashImage src={splashes[currentIndex].image}/>
+							<SplashContent>
+								<SplashTitle>
+									{splashes[currentIndex].title}
+								</SplashTitle>
+								<SplashDescription>
+									{splashes[currentIndex].description}
+								</SplashDescription>
+							</SplashContent>
+							<SplashAction>
+								<SplashDots>
+									{splashes.map((_, index) => {
+										return (
+											<SplashDot
+												$is_active={Number(currentIndex === index)}
+												onClick={() => setCurrentIndex(index)}
+												key={index}
+											/>
+										)
+									})}
+								</SplashDots>
+								<div onClick={handleNext}>
+									<RightArrowIcon/>
+								</div>
+							</SplashAction>
+						</SplashContainer>
+					)
+					:
+					(
+						<div>Loading</div>
+					)
+			}
+		</>
 	);
 };
 

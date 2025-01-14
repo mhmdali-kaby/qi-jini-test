@@ -1,13 +1,17 @@
 import styled from "styled-components";
 
-export const HeaderContainer = styled.header`
+interface HeaderContainerProps {
+	$show?: boolean
+}
+
+export const HeaderContainer = styled.header<HeaderContainerProps>`
+    display: ${({$show}) => $show ? 'flex' : 'none'};
     position: sticky;
     top: 0;
     right: 0;
     padding: 12px 24px 8px;
     background: linear-gradient(to bottom, #F9731666 20%, #ffffff78 100%);
     backdrop-filter: blur(8px);
-    display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 9;

@@ -2,7 +2,6 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {AppDispatch, RootState} from "../../store";
 import {getBestOffers, getNewProducts, getOffers, getSpecialOffers} from "../../store/actions/home.actions.ts";
-import Header from "../../components/header";
 import SearchInput from "../../components/search-input";
 import {
 	FilterCategoriesContainer,
@@ -49,7 +48,6 @@ import {getHomeFilterCategories} from "../../store/actions/categories.actions.ts
 import {formatPrice} from "../../utils/numbers.ts";
 import StarIcon from "../../components/icons/star.icon.tsx";
 import FavoriteIcon from "../../components/icons/favorite.icon.tsx";
-import Nav from "../../components/nav";
 import {Link} from "react-router-dom";
 import {ProductRoute} from "../../router/routes.ts";
 import {useTranslation} from "react-i18next";
@@ -76,7 +74,6 @@ const HomeView: React.FC = () => {
 
 	return (
 		<>
-			<Header showIcon={true}/>
 			<Container>
 				<SearchContainer>
 					<FilterIconContainer>
@@ -308,7 +305,6 @@ const HomeView: React.FC = () => {
           </NewProducts>
 				}
 			</Container>
-			<Nav/>
 		</>
 	);
 };

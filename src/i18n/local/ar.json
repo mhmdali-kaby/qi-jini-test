@@ -7,13 +7,16 @@
     "show_all": "عرض الكل",
     "order_now": "اطلب الان",
     "rate": "مراجعة",
+    "discounts": "الخصومات",
+    "account": "الحساب",
     "previously": "سابقا",
     "favorites": "المفضلة",
     "addresses": "العناوين",
     "community": "المجتمع",
     "completed": "مكتملة",
     "on_going": "مستمرة",
-    "purchases": "المشتريات",
+    "home": "الرئيسية",
+    "purchases": "مشترياتي",
     "quantity": "الكمية",
     "delivered": "تم التوصيل",
     "welcome_to": "مرحبا بك في",
@@ -50,6 +53,14 @@
     "building_name": "اسم المبنى",
     "optional": "اختياري",
     "required": "اجباري",
-    "mark_as_default_location": "اجعل هذا عنواني الافتراضي"
+    "mark_as_default_location": "اجعل هذا عنواني الافتراضي",
+    "order_details": "تفاصيل الطلب",
+    "order_tracking": "تتبع الطلب",
+    "pending_order": "قيد الانتظار",
+    "approved_order": "تم قبوله",
+    "on_delivery_order": "في الطريق",
+    "delivered_order": "تم التوصيل",
+    "order_note": "في حال ورود اي استفسار بخصوص الطلبات الخاصة بك يمكنك\nالتواصل مع التاجر عن طريق الوتساب من الزر ادناه ..",
+    "order_whatsapp_note": "تواصل مع التاجر عن طريق الواتساب"
   }
 }

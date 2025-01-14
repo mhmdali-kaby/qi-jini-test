@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react';
-import Header from "../../components/header";
 import {Container} from "../../styles/styled.ts";
 import {
 	NotificationContainer,
@@ -26,7 +25,6 @@ const NotificationsView: React.FC = () => {
 
 	return (
 		<>
-			<Header/>
 			<Container>
 				<NotificationTitle>
 					{t('notifications')}
