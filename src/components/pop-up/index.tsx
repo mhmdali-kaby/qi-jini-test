@@ -1,7 +1,7 @@
 import {motion} from "framer-motion";
 import Backdrop from "../backdrop";
 import React from "react";
-import {Link} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {PopUpContainer, PopUpDescription, PopUpTitle} from "./styled.ts";
 
 const dropIn = {
@@ -35,7 +35,7 @@ interface BackdropProps {
 }
 
 const PopUp: React.FC<BackdropProps> = ({handleClose, title, description, icon, button_text, link}) => {
-
+	const navigate = useNavigate();
 	return (
 		<Backdrop onClick={handleClose}>
 			<PopUpContainer>
@@ -51,7 +51,7 @@ const PopUp: React.FC<BackdropProps> = ({handleClose, title, description, icon, 
 					<PopUpTitle>{title}</PopUpTitle>
 					<PopUpDescription>{description}</PopUpDescription>
 					{link ?
-						<Link to={link} className='pup-up-button'>{button_text}</Link>
+						<span onClick={() => navigate(link)} className='pup-up-button'>{button_text}</span>
 						:
 						<button onClick={handleClose} className='pup-up-button'>{button_text}</button>
 					}

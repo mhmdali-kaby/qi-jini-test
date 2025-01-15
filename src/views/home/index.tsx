@@ -48,7 +48,7 @@ import {getHomeFilterCategories} from "../../store/actions/categories.actions.ts
 import {formatPrice} from "../../utils/numbers.ts";
 import StarIcon from "../../components/icons/star.icon.tsx";
 import FavoriteIcon from "../../components/icons/favorite.icon.tsx";
-import {Link} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {ProductRoute} from "../../router/routes.ts";
 import {useTranslation} from "react-i18next";
 import {CURRENCY} from "../../utils/constants.ts";
@@ -56,6 +56,7 @@ import {CURRENCY} from "../../utils/constants.ts";
 const HomeView: React.FC = () => {
 	const {t} = useTranslation();
 	const dispatch = useDispatch<AppDispatch>();
+	const navigate = useNavigate();
 	const {
 		offers,
 		bestOffers,
@@ -112,9 +113,9 @@ const HomeView: React.FC = () => {
             <HomeProductsContainer>
 							{bestOffers.data.map((offer, index) => (
 								<HomeProduct key={index}>
-									<Link to={ProductRoute.replace(':id', offer.id.toString())}>
+									<span onClick={() => navigate(ProductRoute.replace(':id', offer.id.toString()))}>
 										<HomeProductImage src={offer.image}/>
-									</Link>
+									</span>
 									<HomeProductFavoriteIcon>
 										<FavoriteIcon/>
 									</HomeProductFavoriteIcon>
@@ -137,12 +138,12 @@ const HomeView: React.FC = () => {
 												<StarIcon/>
 											</HomeProductRate>
 										</HomeProductNumbers>
-										<Link to={ProductRoute.replace(':id', offer.id.toString())}>
+										<span onClick={() => navigate(ProductRoute.replace(':id', offer.id.toString()))}>
 											<HomeProductText>
 												<HomeProductTitle>{offer.title}</HomeProductTitle>
 												<HomeProductDescription>{offer.description}</HomeProductDescription>
 											</HomeProductText>
-										</Link>
+										</span>
 									</HomeProductContent>
 								</HomeProduct>
 							))}
@@ -170,12 +171,12 @@ const HomeView: React.FC = () => {
                       </NewProductLabel>
 										}
 									</NewProductContentHeader>
-									<Link to={ProductRoute.replace(':id', product.id.toString())}>
+									<span onClick={() => navigate(ProductRoute.replace(':id', product.id.toString()))}>
 										<NewProductText>
 											<NewProductTitle>{product.title}</NewProductTitle>
 											<NewProductDescription>{product.description}</NewProductDescription>
 										</NewProductText>
-									</Link>
+									</span>
 									<NewProductFooter>
 										<div>
 											<NewProductPrice>
@@ -194,9 +195,9 @@ const HomeView: React.FC = () => {
 										</div>
 									</NewProductFooter>
 								</NewProductContent>
-								<Link to={ProductRoute.replace(':id', product.id.toString())} className='image-container'>
+								<span onClick={() => navigate(ProductRoute.replace(':id', product.id.toString()))} className='image-container'>
 									<NewProductImage src={product.image}/>
-								</Link>
+								</span>
 							</NewProduct>
 						))}
           </NewProducts>
@@ -215,9 +216,9 @@ const HomeView: React.FC = () => {
             <HomeProductsContainer className='small'>
 							{specialOffers.data.map((offer, index) => (
 								<HomeProduct key={index} className='small'>
-									<Link to={ProductRoute.replace(':id', offer.id.toString())}>
+									<span onClick={() => navigate(ProductRoute.replace(':id', offer.id.toString()))}>
 										<HomeProductImage src={offer.image}/>
-									</Link>
+									</span>
 									<HomeProductFavoriteIcon className='small'>
 										<FavoriteIcon/>
 									</HomeProductFavoriteIcon>
@@ -240,12 +241,12 @@ const HomeView: React.FC = () => {
 												<StarIcon isSmall={true}/>
 											</HomeProductRate>
 										</HomeProductNumbers>
-										<Link to={ProductRoute.replace(':id', offer.id.toString())}>
+										<span onClick={() => navigate(ProductRoute.replace(':id', offer.id.toString()))}>
 											<HomeProductText>
 												<HomeProductTitle className='small'>{offer.title}</HomeProductTitle>
 												<HomeProductDescription className='small'>{offer.description}</HomeProductDescription>
 											</HomeProductText>
-										</Link>
+										</span>
 									</HomeProductContent>
 								</HomeProduct>
 							))}
@@ -273,12 +274,12 @@ const HomeView: React.FC = () => {
                       </NewProductLabel>
 										}
 									</NewProductContentHeader>
-									<Link to={ProductRoute.replace(':id', product.id.toString())}>
+									<span onClick={() => navigate(ProductRoute.replace(':id', product.id.toString()))}>
 										<NewProductText>
 											<NewProductTitle>{product.title}</NewProductTitle>
 											<NewProductDescription>{product.description}</NewProductDescription>
 										</NewProductText>
-									</Link>
+									</span>
 									<NewProductFooter>
 										<div>
 											<NewProductPrice>
@@ -297,9 +298,9 @@ const HomeView: React.FC = () => {
 										</div>
 									</NewProductFooter>
 								</NewProductContent>
-								<Link to={ProductRoute.replace(':id', product.id.toString())} className='image-container'>
+								<span onClick={() => navigate(ProductRoute.replace(':id', product.id.toString()))} className='image-container'>
 									<NewProductImage src={product.image}/>
-								</Link>
+								</span>
 							</NewProduct>
 						))}
           </NewProducts>

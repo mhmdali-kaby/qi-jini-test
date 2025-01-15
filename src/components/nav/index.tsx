@@ -4,7 +4,7 @@ import ProfileIcon from "../icons/profile.icon.tsx";
 import DiscountsIcon from "../icons/discounts.icon.tsx";
 import OrdersIcon from "../icons/orders.icon.tsx";
 import HomeIcon from "../icons/home.icon.tsx";
-import {Link, useLocation} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 import {DiscountsRoute, HomeRoute, OrdersRoute, ProfileRoute} from "../../router/routes.ts";
 
 interface NavProps {
@@ -13,20 +13,22 @@ interface NavProps {
 
 const Nav: React.FC<NavProps> = ({show}) => {
 	const location = useLocation();
+	const navigate = useNavigate();
+
 	return (
 		<NavContainer $show={show}>
-			<Link to={ProfileRoute}>
+			<span onClick={() => navigate(ProfileRoute)}>
 				<ProfileIcon isActive={location.pathname === ProfileRoute}/>
-			</Link>
-			<Link to={DiscountsRoute}>
+			</span>
+			<span onClick={() => navigate(DiscountsRoute)}>
 				<DiscountsIcon isActive={location.pathname === DiscountsRoute}/>
-			</Link>
-			<Link to={OrdersRoute}>
+			</span>
+			<span onClick={() => navigate(OrdersRoute)}>
 				<OrdersIcon isActive={location.pathname === OrdersRoute}/>
-			</Link>
-			<Link to={HomeRoute}>
+			</span>
+			<span onClick={() => navigate(HomeRoute)}>
 				<HomeIcon isActive={location.pathname === HomeRoute}/>
-			</Link>
+			</span>
 		</NavContainer>
 	);
 };

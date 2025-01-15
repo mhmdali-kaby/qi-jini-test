@@ -28,12 +28,13 @@ import {formatPrice} from "../../utils/numbers.ts";
 import {useTranslation} from "react-i18next";
 import {AttributeType} from "../../store/interfaces/product-attribute.interface.ts";
 import {CURRENCY} from "../../utils/constants.ts";
-import {Link} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {OrderDetailsRoute} from "../../router/routes.ts";
 
 const OrdersView: React.FC = () => {
 	const {t} = useTranslation();
 	const dispatch = useDispatch<AppDispatch>();
+	const navigate = useNavigate();
 	const {data, loading} = useSelector((state: RootState) => state.ordersReducer);
 
 	useEffect(() => {
@@ -59,7 +60,7 @@ const OrdersView: React.FC = () => {
 				{!loading && data.length > 0 &&
           <OrdersContainer>
 						{data.map((item, index) => (
-							<Link to={OrderDetailsRoute.replace(':id', item.id.toString())} key={index}>
+							<span onClick={() => navigate(OrderDetailsRoute.replace(':id', item.id.toString()))} key={index}>
 								<Order>
 									<OrderImage src={item.items[0].product.image}/>
 									<OrderContent>
@@ -95,7 +96,7 @@ const OrdersView: React.FC = () => {
 										</OrderBottom>
 									</OrderContent>
 								</Order>
-							</Link>
+							</span>
 						))}
           </OrdersContainer>
 				}

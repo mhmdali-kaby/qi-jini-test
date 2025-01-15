@@ -14,7 +14,7 @@ import {
 	HeaderRightContentWelcome,
 	HeaderRightIcons
 } from "./styled.ts";
-import {Link, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {getStoreInfo} from "../../store/actions/store.actions.ts";
 import {CartRoute, NotificationsRoute} from "../../router/routes.ts";
 import CartIcon from "../icons/cart.icon.tsx";
@@ -50,7 +50,7 @@ const Header: React.FC<HeaderProps> = ({showIcon, show}) => {
 			<HeaderLeftIcons>
 				{showIcon ?
 					<>
-						<Link to={CartRoute}>
+						<span onClick={() => navigate(CartRoute)}>
 							<HeaderIcon $padding="18">
 								<CartIcon/>
 								<HeaderIconCounter $small={false}>
@@ -59,8 +59,8 @@ const Header: React.FC<HeaderProps> = ({showIcon, show}) => {
 									</span>
 								</HeaderIconCounter>
 							</HeaderIcon>
-						</Link>
-						<Link to={NotificationsRoute}>
+						</span>
+						<span onClick={() => navigate(NotificationsRoute)}>
 							<HeaderIcon $padding="14">
 								<NotificationIcon/>
 								<HeaderIconCounter $small={true}>
@@ -69,7 +69,7 @@ const Header: React.FC<HeaderProps> = ({showIcon, show}) => {
 									</span>
 								</HeaderIconCounter>
 							</HeaderIcon>
-						</Link>
+						</span>
 					</>
 					:
 					<>

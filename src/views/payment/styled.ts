@@ -43,10 +43,10 @@ export const PaymentMethodContainer = styled.label<PaymentMethodContainerProps>`
     justify-content: space-between;
     padding: 6px 14px;
     align-items: center;
-    border: 1px solid ${({$selected}) => $selected ? '#e76d19' : '#fff'};
+    border: 1px solid ${({$selected, theme}) => $selected ? theme.colors.orange : '#fff'};
 
     input {
-        accent-color: #e76d19;
+        accent-color: #f16e13;
     }
 `;
 

@@ -36,7 +36,7 @@ import {
 import {CURRENCY} from "../../utils/constants.ts";
 import CompleteAndPayIcon from "../../components/icons/complete-and-pay.icon.tsx";
 import WhiteTrashIcon from "../../components/icons/white-trash.icon.tsx";
-import {Link} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {PaymentRoute} from "../../router/routes.ts";
 
 const CartView: React.FC = () => {
@@ -44,6 +44,7 @@ const CartView: React.FC = () => {
 	const dispatch = useDispatch<AppDispatch>();
 	const {items, offline_count, offline_price, loading} = useSelector((state: RootState) => state.cartReducer);
 	const [trashVisible, setTrashVisible] = useState<number | null>(null);
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		dispatch(getCartItems());
@@ -148,14 +149,14 @@ const CartView: React.FC = () => {
 								<span>{t('products')}</span>
 							</CartCount>
 						</CartPriceContainer>
-						<Link to={PaymentRoute}>
+						<span onClick={() => navigate(PaymentRoute)}>
 							<CartCompleteAndPay>
 								<CompleteAndPayIcon/>
 								<span>
 								{t('complete_and_pay')}
 							</span>
 							</CartCompleteAndPay>
-						</Link>
+						</span>
 					</CompleteButtonContainer>
 				</CartContainer>
 			</Container>

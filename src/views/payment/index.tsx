@@ -22,7 +22,7 @@ import {changePaymentMethod} from "../../store/reducers/cart.reducer.ts";
 import LocationIcon from "../../components/icons/location.icon.tsx";
 import InputComponent from "../../components/input";
 import {AddLocationRoute, OrderDetailsRoute} from "../../router/routes.ts";
-import {Link, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 const PaymentView: React.FC = () => {
 	const {t} = useTranslation();
@@ -65,12 +65,12 @@ const PaymentView: React.FC = () => {
 							))}
 						</PaymentMethodsContainer>
 						<PaymentTitle>{t('location')}</PaymentTitle>
-						<Link to={AddLocationRoute}>
+						<span onClick={() => navigate(AddLocationRoute)}>
 							<ChooseLocation>
 								<LocationIcon/>
 								<span>... {t('choose_location')}</span>
 							</ChooseLocation>
-						</Link>
+						</span>
 						<PaymentTitle>{t('location_additional_information')}</PaymentTitle>
 						<LocationAdditionalInformation>
 							<InputComponent placeholder={t('phone_number')} name='phone_number'/>

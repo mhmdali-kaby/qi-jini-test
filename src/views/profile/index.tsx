@@ -16,7 +16,7 @@ import {
 import {useDispatch, useSelector} from "react-redux";
 import {AppDispatch, RootState} from "../../store";
 import {getProfileInfo} from "../../store/actions/profile.actions.ts";
-import {Link} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {HomeRoute} from "../../router/routes.ts";
 import LinkLeftIcon from "../../components/icons/link-left-arrow.icon.tsx";
 import ProfileLinkIcon from "../../components/icons/profile-link.icon.tsx";
@@ -31,6 +31,7 @@ import {useTranslation} from "react-i18next";
 const ProfileView: React.FC = () => {
 	const {t} = useTranslation();
 	const dispatch = useDispatch<AppDispatch>();
+	const navigate = useNavigate();
 	const {info, loading} = useSelector((state: RootState) => state.profileReducer);
 
 	useEffect(() => {
@@ -63,7 +64,7 @@ const ProfileView: React.FC = () => {
               </UserInfo>
             </UserDetails>
             <ProfileLinksSection>
-              <Link to={HomeRoute}>
+              <span onClick={() => navigate(HomeRoute)}>
                 <LinkLeftIcon/>
                 <RightLinkContent>
                   <LinkTitle>
@@ -71,8 +72,8 @@ const ProfileView: React.FC = () => {
                   </LinkTitle>
                   <ProfileLinkIcon/>
                 </RightLinkContent>
-              </Link>
-              <Link to={HomeRoute}>
+              </span>
+              <span onClick={() => navigate(HomeRoute)}>
                 <LinkLeftIcon/>
                 <RightLinkContent>
                   <LinkTitle>
@@ -80,8 +81,8 @@ const ProfileView: React.FC = () => {
                   </LinkTitle>
                   <OrdersLinkIcon/>
                 </RightLinkContent>
-              </Link>
-              <Link to={HomeRoute}>
+              </span>
+              <span onClick={() => navigate(HomeRoute)}>
                 <LinkLeftIcon/>
                 <RightLinkContent>
                   <LinkTitle>
@@ -89,8 +90,8 @@ const ProfileView: React.FC = () => {
                   </LinkTitle>
                   <FavoritesLinkIcon/>
                 </RightLinkContent>
-              </Link>
-              <Link to={HomeRoute}>
+              </span>
+              <span onClick={() => navigate(HomeRoute)}>
                 <LinkLeftIcon/>
                 <RightLinkContent>
                   <LinkTitle>
@@ -98,10 +99,10 @@ const ProfileView: React.FC = () => {
                   </LinkTitle>
                   <LocationsLinkIcon/>
                 </RightLinkContent>
-              </Link>
+              </span>
             </ProfileLinksSection>
             <ProfileLinksSection>
-              <Link to={HomeRoute}>
+              <span onClick={() => navigate(HomeRoute)}>
                 <LinkLeftIcon/>
                 <RightLinkContent>
                   <LinkTitle>
@@ -109,8 +110,8 @@ const ProfileView: React.FC = () => {
                   </LinkTitle>
                   <CommonQuestionsLinkIcon/>
                 </RightLinkContent>
-              </Link>
-              <Link to={HomeRoute}>
+              </span>
+              <span onClick={() => navigate(HomeRoute)}>
                 <LinkLeftIcon/>
                 <RightLinkContent>
                   <LinkTitle>
@@ -118,8 +119,8 @@ const ProfileView: React.FC = () => {
                   </LinkTitle>
                   <PrivacyPolicyLinkIcon/>
                 </RightLinkContent>
-              </Link>
-              <Link to={HomeRoute}>
+              </span>
+              <span onClick={() => navigate(HomeRoute)}>
                 <LinkLeftIcon/>
                 <RightLinkContent>
                   <LinkTitle>
@@ -127,7 +128,7 @@ const ProfileView: React.FC = () => {
                   </LinkTitle>
                   <CommunityLinkIcon/>
                 </RightLinkContent>
-              </Link>
+              </span>
             </ProfileLinksSection>
           </ProfileContainer>
 				}

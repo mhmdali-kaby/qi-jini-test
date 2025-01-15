@@ -68,7 +68,7 @@ export const ProfileLinksSection = styled.div`
     flex-direction: column;
     gap: 8px;
 
-    a {
+    span {
         display: flex;
         justify-content: space-between;
         align-items: center;
