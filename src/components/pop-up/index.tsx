@@ -31,13 +31,14 @@ interface BackdropProps {
 	icon: React.ReactNode,
 	button_text: React.ReactNode,
 	handleClose: (event: React.MouseEvent<HTMLDivElement | HTMLButtonElement, MouseEvent>) => void,
-	link?: string
+	link?: string,
+	isOpen: boolean
 }
 
-const PopUp: React.FC<BackdropProps> = ({handleClose, title, description, icon, button_text, link}) => {
+const PopUp: React.FC<BackdropProps> = ({handleClose, title, description, icon, button_text, link, isOpen}) => {
 	const navigate = useNavigate();
 	return (
-		<Backdrop onClick={handleClose}>
+		<Backdrop onClick={handleClose} isOpen={isOpen}>
 			<PopUpContainer>
 				<motion.div
 					onClick={(e) => e.stopPropagation()}

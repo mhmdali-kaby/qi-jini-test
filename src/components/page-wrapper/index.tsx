@@ -6,6 +6,7 @@ import {useLocation, useNavigate} from "react-router-dom";
 import {AnimateContainer} from "./styled.ts";
 import {routesConfig} from "../../router/routes.ts";
 import {useSwipeable} from "react-swipeable";
+import {preventSwipe} from "../../utils/elements.ts";
 
 const pageVariants = {
 	initial: { x: '100%', opacity: 0.8, scale: 0.95 },
@@ -31,14 +32,17 @@ const PageWrapper: React.FC<PageWrapperProps> = ({children}) => {
 
 
 	const swipeHandlers = useSwipeable({
-		onSwipedLeft: () => {
+		onSwipedLeft: (eventData) => {
+			if (preventSwipe(eventData.event.target as HTMLElement)) return;
 			navigate(1);
 		},
-		onSwipedRight: () => {
+		onSwipedRight: (eventData) => {
+			if (preventSwipe(eventData.event.target as HTMLElement)) return;
 			navigate(-1);
 		},
 		preventScrollOnSwipe: true,
 		trackTouch: true,
+		delta: 30,
 	});
 
 	useEffect(() => {

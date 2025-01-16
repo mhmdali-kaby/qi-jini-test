@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {AppDispatch, RootState} from "../../store";
 import {getBestOffers, getNewProducts, getOffers, getSpecialOffers} from "../../store/actions/home.actions.ts";
@@ -52,9 +52,12 @@ import {useNavigate} from "react-router-dom";
 import {ProductRoute} from "../../router/routes.ts";
 import {useTranslation} from "react-i18next";
 import {CURRENCY} from "../../utils/constants.ts";
+import ClickableButton from "../../components/clickable-button";
+import GlobalFilters from "../../components/global-filters";
 
 const HomeView: React.FC = () => {
 	const {t} = useTranslation();
+	const [openFilters, setOpenFilters] = useState(false);
 	const dispatch = useDispatch<AppDispatch>();
 	const navigate = useNavigate();
 	const {
@@ -73,13 +76,23 @@ const HomeView: React.FC = () => {
 		dispatch(getHomeFilterCategories());
 	}, [dispatch]);
 
+	useEffect(() => {
+		if (openFilters) {
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = 'auto';
+		}
+	}, [openFilters]);
+
 	return (
 		<>
 			<Container>
 				<SearchContainer>
-					<FilterIconContainer>
-						<FilterIcon/>
-					</FilterIconContainer>
+					<ClickableButton onClick={() => setOpenFilters(true)}>
+						<FilterIconContainer>
+							<FilterIcon/>
+						</FilterIconContainer>
+					</ClickableButton>
 					<SearchInput/>
 				</SearchContainer>
 				{!filterCategories.loading && filterCategories.data.length > 0 &&
@@ -306,6 +319,7 @@ const HomeView: React.FC = () => {
           </NewProducts>
 				}
 			</Container>
+			<GlobalFilters isOpen={openFilters} onClose={() => setOpenFilters(false)}/>
 		</>
 	);
 };

@@ -35,11 +35,11 @@ import SizeProductAttribute from "../../components/product/product-attribute/siz
 import {formatPrice} from "../../utils/numbers.ts";
 import AddProductToCart from "../../components/icons/add-product-to-cart.icon.tsx";
 import {useTranslation} from "react-i18next";
-import {motion} from "framer-motion";
 import PopUp from "../../components/pop-up";
 import ProductAddedToCart from "../../components/icons/product-added-to-cart.icon.tsx";
 import {CartRoute} from "../../router/routes.ts";
 import {CURRENCY} from "../../utils/constants.ts";
+import ClickableButton from "../../components/clickable-button";
 
 const ProductView: React.FC = () => {
 	const {id} = useParams();
@@ -138,33 +138,27 @@ const ProductView: React.FC = () => {
 									<AddToCartPriceValue>{formatPrice((data.price ?? 0) * count)}</AddToCartPriceValue>
 									<AddToCartPriceCurrency>{CURRENCY}</AddToCartPriceCurrency>
 								</AddToCartPrice>
-								<motion.button
-									whileHover={{scale: 1.1}}
-									whileTap={{scale: 0.9}}
-									className="add-to-cart"
-									onClick={() => (popUpOpen ? closePopUp() : openPopUp())}
-								>
+								<ClickableButton onClick={() => (popUpOpen ? closePopUp() : openPopUp())}>
 									<AddToCartButton onClick={addToCart}>
 										<span>
 											{t('add_to_cart')}
 										</span>
 										<AddProductToCart/>
 									</AddToCartButton>
-								</motion.button>
+								</ClickableButton>
 							</AddToCart>
 						</AddToCartContainer>
 					</ProductContainer>
 				)}
-				{popUpOpen &&
-          <PopUp
-            title={t('product_added_to_cart_title')}
-            description={t('product_added_to_cart_description')}
-            icon={<ProductAddedToCart/>}
-            button_text={t('product_added_to_cart_close_text')}
-            handleClose={closePopUp}
-            link={CartRoute}
-          />
-				}
+        <PopUp
+          title={t('product_added_to_cart_title')}
+          description={t('product_added_to_cart_description')}
+          icon={<ProductAddedToCart/>}
+          button_text={t('product_added_to_cart_close_text')}
+          handleClose={closePopUp}
+          link={CartRoute}
+          isOpen={popUpOpen}
+        />
 			</Container>
 		</>
 	);

@@ -86,4 +86,39 @@ export const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
     a {
         text-decoration: none;
     }
+
+    .backdrop {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.70);
+        opacity: 1;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        padding: 0;
+        width: 100%;
+        z-index: 9;
+    }
+    
+    .clickable-button {
+		    background: none;
+		    border: none;
+		    padding: 0;
+    }
+    
+    .bottom-sheet {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #FFF;
+        border-radius: 20px 20px 0 0;
+        padding: 20px;
+        z-index: 20;
+        height: 500px;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+				overflow: scroll;
+    }
 `;

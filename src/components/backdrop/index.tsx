@@ -1,26 +1,28 @@
-import {motion} from "framer-motion";
+import {motion, AnimatePresence} from "framer-motion";
 import React from "react";
-import {BackdropContainer} from "./styled.ts";
 
 interface BackdropProps {
 	children: React.ReactNode,
-	onClick: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
+	onClick: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void,
+	isOpen: boolean
 }
 
-const Backdrop: React.FC<BackdropProps> = ({children, onClick}) => {
-
+const Backdrop: React.FC<BackdropProps> = ({children, onClick, isOpen}) => {
 	return (
-		<BackdropContainer>
-			<motion.div
-				onClick={onClick}
-				className="backdrop"
-				initial={{opacity: 0}}
-				animate={{opacity: 1}}
-				exit={{opacity: 0}}
-			>
-				{children}
-			</motion.div>
-		</BackdropContainer>
+		<AnimatePresence>
+			{isOpen && (
+				<motion.div
+					onClick={onClick}
+					className="backdrop"
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					exit={{ opacity: 0 }}
+					transition={{ duration: 0.3 }}
+				>
+					{children}
+				</motion.div>
+			)}
+		</AnimatePresence>
 	);
 };
 
