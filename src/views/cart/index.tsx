@@ -80,7 +80,7 @@ const CartView: React.FC = () => {
 							<>
 								<CartItems>
 									{items.map((item, index) => (
-										<CartItemContainer key={index}>
+										<CartItemContainer key={index} className='prevent-swipe'>
 											<CartItemTrash>
 												<span>
 													<WhiteTrashIcon/>
