@@ -50,7 +50,7 @@ const AddLocationView: React.FC = () => {
 				<AddLocationContainer>
 					<div className="add-location-content">
 						<AddLocationTitle>{t('add_location')}</AddLocationTitle>
-						<ChangeMapContainer>
+						<ChangeMapContainer className='prevent-swipe'>
 							<MapContainer center={position} zoom={13} scrollWheelZoom={false}>
 								<TileLayer
 									attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

@@ -67,6 +67,10 @@ export const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
         font-weight: 100;
         font-style: normal;
     }
+    
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
 
     html, body {
         height: 100%;
@@ -106,6 +110,17 @@ export const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
 		    background: none;
 		    border: none;
 		    padding: 0;
+		    user-select: none;
+        outline: none;
+        appearance: none;
+		    &:active {
+            background-color: transparent;
+            box-shadow: none;
+        }
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
     }
     
     .bottom-sheet {
@@ -120,5 +135,12 @@ export const GlobalStyles = createGlobalStyle<{ theme: ThemeType }>`
         height: 500px;
         box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
 				overflow: scroll;
+    }
+    
+    .fade-animation {
+		    height: fit-content;
+		    span {
+				    display: flex;
+		    }
     }
 `;

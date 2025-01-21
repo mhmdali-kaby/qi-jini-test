@@ -15,6 +15,7 @@ import {
 import {useNavigate} from "react-router-dom";
 import {HomeRoute} from "../../router/routes.ts";
 import RightArrowIcon from "../../components/icons/right-arrow.icon.tsx";
+import ClickableButton from "../../components/clickable-button";
 
 const SplashView: React.FC = () => {
 	const dispatch = useDispatch<AppDispatch>();
@@ -60,9 +61,9 @@ const SplashView: React.FC = () => {
 										)
 									})}
 								</SplashDots>
-								<div onClick={handleNext}>
+								<ClickableButton onClick={handleNext}>
 									<RightArrowIcon/>
-								</div>
+								</ClickableButton>
 							</SplashAction>
 						</SplashContainer>
 					)

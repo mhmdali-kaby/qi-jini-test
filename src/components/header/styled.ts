@@ -34,7 +34,7 @@ export const HeaderIcon = styled.div<{ $padding: string }>`
 
 export const HeaderIconCounter = styled.span<{ $small: boolean }>`
     background: #fff;
-    padding: ${({$small}) => $small ? '2px 3px' : '5px'};
+    padding: ${({$small}) => $small ? '5px 2px' : '6px 3px'};
     border-radius: 50%;
     position: absolute;
     top: ${({$small}) => $small ? '-6px' : '-12px'};
@@ -42,7 +42,7 @@ export const HeaderIconCounter = styled.span<{ $small: boolean }>`
 
     span {
         background: ${({theme}) => theme.colors.orange};
-        padding: ${({$small}) => $small ? '3px 7px 0' : '4px 8px 0'};
+        padding: ${({$small}) => $small ? '3px 7px 2px' : '4px 8px 4px'};
         border-radius: 50%;
         color: #FFF;
         font-weight: bold;

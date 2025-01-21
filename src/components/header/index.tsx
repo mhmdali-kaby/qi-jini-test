@@ -21,6 +21,7 @@ import CartIcon from "../icons/cart.icon.tsx";
 import NotificationIcon from "../icons/notification.icon.tsx";
 import LeftArrowIcon from "../icons/left-arrow.icon.tsx";
 import {useTranslation} from "react-i18next";
+import ClickableButton from "../clickable-button";
 
 interface HeaderProps {
 	showIcon?: boolean;
@@ -50,7 +51,7 @@ const Header: React.FC<HeaderProps> = ({showIcon, show}) => {
 			<HeaderLeftIcons>
 				{showIcon ?
 					<>
-						<span onClick={() => navigate(CartRoute)}>
+						<ClickableButton onClick={() => navigate(CartRoute)}>
 							<HeaderIcon $padding="18">
 								<CartIcon/>
 								<HeaderIconCounter $small={false}>
@@ -59,8 +60,8 @@ const Header: React.FC<HeaderProps> = ({showIcon, show}) => {
 									</span>
 								</HeaderIconCounter>
 							</HeaderIcon>
-						</span>
-						<span onClick={() => navigate(NotificationsRoute)}>
+						</ClickableButton>
+						<ClickableButton onClick={() => navigate(NotificationsRoute)}>
 							<HeaderIcon $padding="14">
 								<NotificationIcon/>
 								<HeaderIconCounter $small={true}>
@@ -69,12 +70,12 @@ const Header: React.FC<HeaderProps> = ({showIcon, show}) => {
 									</span>
 								</HeaderIconCounter>
 							</HeaderIcon>
-						</span>
+						</ClickableButton>
 					</>
 					:
-					<>
-						<LeftArrowIcon onClick={handleGoBack}/>
-					</>
+					<ClickableButton onClick={handleGoBack}>
+						<LeftArrowIcon/>
+					</ClickableButton>
 				}
 			</HeaderLeftIcons>
 			<HeaderRightIcons>

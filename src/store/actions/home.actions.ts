@@ -1,6 +1,7 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
 import {OffersDummy, ProductsDummy} from "../../dummy-data.ts";
 import {AxiosError} from "axios";
+import {sleep} from "../../utils/helpers.ts";
 // import {
 // 	GetBestOffersEndpoint,
 // 	GetNewProductsEndpoint,
@@ -15,6 +16,7 @@ export const getOffers = createAsyncThunk(
 		try {
 			// const response = await api.get(GetOffersEndpoint);
 			// return await response.data;
+			await sleep(3500);
 			return OffersDummy;
 		} catch (err) {
 			const error = err as AxiosError;
@@ -29,6 +31,7 @@ export const getBestOffers = createAsyncThunk(
 		try {
 			// const response = await api.get(GetBestOffersEndpoint);
 			// return await response.data;
+			await sleep(1500);
 			return ProductsDummy;
 		} catch (err) {
 			const error = err as AxiosError;
@@ -43,6 +46,7 @@ export const getNewProducts = createAsyncThunk(
 		try {
 			// const response = await api.get(GetNewProductsEndpoint);
 			// return await response.data;
+			await sleep(2000);
 			return ProductsDummy;
 		} catch (err) {
 			const error = err as AxiosError;
@@ -57,6 +61,7 @@ export const getSpecialOffers = createAsyncThunk(
 		try {
 			// const response = await api.get(GetSpecialOffersEndpoint);
 			// return await response.data;
+			await sleep(3000);
 			return ProductsDummy;
 		} catch (err) {
 			const error = err as AxiosError;
