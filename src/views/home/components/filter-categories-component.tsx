@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import {FilterCategoriesContainer} from "../styled.ts";
+import {FilterCategoriesContainer, FilterCategory} from "../styled.ts";
 import {useDispatch, useSelector} from "react-redux";
 import {AppDispatch, RootState} from "../../../store";
 import {getHomeFilterCategories} from "../../../store/actions/categories.actions.ts";
@@ -24,7 +24,7 @@ const FilterCategoriesComponent: React.FC = () => {
 					:
 					filterCategories.data.map((category, index) => (
 						<FadeAnimation key={index}>
-							<div className='filter-category'>{category.title}</div>
+							<FilterCategory>{category.title}</FilterCategory>
 						</FadeAnimation>
 					))
 				}

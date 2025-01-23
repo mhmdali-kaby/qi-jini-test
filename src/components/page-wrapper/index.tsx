@@ -50,9 +50,7 @@ const PageWrapper: React.FC<PageWrapperProps> = ({children}) => {
 			(path) => location.pathname.startsWith(path)
 		);
 
-		if (!currentConfig) {
-			console.error(`No configuration found for path: ${location.pathname}`);
-		} else {
+		if (currentConfig) {
 			setRouteConfig(routesConfig[currentConfig]);
 		}
 	}, [location]);

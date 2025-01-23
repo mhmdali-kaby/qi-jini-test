@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {
+	HomeProduct, HomeProductFavoriteIcon, HomeProductImage,
 	HomeProductsContainer,
 	HomeProductsTitle,
 } from "../styled.ts";
@@ -17,6 +18,7 @@ import {useNavigate} from "react-router-dom";
 import {DashDivider} from "../../../styles/styled.ts";
 import HomeOffersProductsSkeletons from "../../../components/skeletons/home-offers-products.tsx";
 import {AnimatePresence} from "framer-motion";
+import {IProduct} from "../../../store/interfaces/product.interface.ts";
 
 interface OffersProductsComponentProps {
 	isSpecialOffers?: boolean
@@ -27,7 +29,7 @@ const OffersProductsComponent: React.FC<OffersProductsComponentProps> = ({isSpec
 	const dispatch = useDispatch<AppDispatch>();
 	const {bestOffers, specialOffers} = useSelector((state: RootState) => state.homeReducer);
 	const navigate = useNavigate();
-	const [data, setData] = useState<any>();
+	const [data, setData] = useState<{data: IProduct[], loading: boolean, error: string | null}>();
 
 	useEffect(() => {
 		if (bestOffers.data.length === 0 && !bestOffers.loading && !bestOffers.error && !isSpecialOffers)
@@ -54,15 +56,15 @@ const OffersProductsComponent: React.FC<OffersProductsComponentProps> = ({isSpec
 					{data && data.loading ?
 						<HomeOffersProductsSkeletons count={4}/>
 						:
-						data && data.data.map((offer: any, index: number) => (
+						data && data.data.map((offer: IProduct, index: number) => (
 							<FadeAnimation key={index}>
-								<div className='home-product'>
+								<HomeProduct>
 									<span onClick={() => navigate(ProductRoute.replace(':id', offer.id.toString()))}>
-										<img className='home-product-image' src={offer.image} alt='home-product-image'/>
+										<HomeProductImage src={offer.image}/>
 									</span>
-									<div className='home-product-favorite-icon'>
+									<HomeProductFavoriteIcon>
 										<FavoriteIcon/>
-									</div>
+									</HomeProductFavoriteIcon>
 									<div className='home-product-content'>
 										<div className='home-product-numbers'>
 											<div>
@@ -87,7 +89,7 @@ const OffersProductsComponent: React.FC<OffersProductsComponentProps> = ({isSpec
 											<div className='home-product-description'>{offer.description}</div>
 										</div>
 									</div>
-								</div>
+								</HomeProduct>
 							</FadeAnimation>
 						))
 					}

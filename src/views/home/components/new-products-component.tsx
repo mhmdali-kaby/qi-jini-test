@@ -1,7 +1,16 @@
 import React, {useEffect} from "react";
 import {
+	NewProduct,
+	NewProductContent,
+	NewProductDescription,
+	NewProductFooter,
+	NewProductHeader, NewProductImage, NewProductImageContainer,
+	NewProductLabel, NewProductOldPrice, NewProductPrice,
+	NewProductRate,
 	NewProducts,
 	NewProductsTitle,
+	NewProductText,
+	NewProductTitle,
 } from "../styled.ts";
 import {useDispatch, useSelector} from "react-redux";
 import {AppDispatch, RootState} from "../../../store";
@@ -45,45 +54,45 @@ const NewProductsComponent: React.FC<NewProductsComponentProps> = ({isLight}) =>
 					:
 					newProducts.data.map((product, index) => (
 						<FadeAnimation key={index}>
-							<div className='new-product'>
-								<div className='new-product-content'>
-									<div className='new-product-header'>
-										<div className='new-product-rate'>
+							<NewProduct>
+								<NewProductContent>
+									<NewProductHeader>
+										<NewProductRate>
 											{product.rate}
 											<StarIcon/>
-										</div>
+										</NewProductRate>
 										{product.label &&
-                      <div className='new-product-label' style={{background: product.label_color ?? '#fff'}}>
+                      <NewProductLabel style={{background: product.label_color ?? '#fff'}}>
 												{product.label}
-                      </div>
+                      </NewProductLabel>
 										}
-									</div>
-									<div className='new-product-text' onClick={() => navigate(ProductRoute.replace(':id', product.id.toString()))}>
-										<div className='new-product-title'>{product.title}</div>
-										<div className='new-product-description'>{product.description}</div>
-									</div>
-									<div className='new-product-footer'>
+									</NewProductHeader>
+									<NewProductText onClick={() => navigate(ProductRoute.replace(':id', product.id.toString()))}>
+										<NewProductTitle>{product.title}</NewProductTitle>
+										<NewProductDescription>{product.description}</NewProductDescription>
+									</NewProductText>
+									<NewProductFooter>
 										<div>
-											<div className='new-product-price'>
+											<NewProductPrice>
 												<div>{formatPrice(product.price)}</div>
 												<span>{CURRENCY}</span>
-											</div>
+											</NewProductPrice>
 											{product.old_price &&
-                        <div className='new-product-old-price'>
+                        <NewProductOldPrice>
                           <span>{formatPrice(product.old_price)}</span>
                           <div>{t('previously')}</div>
-                        </div>
+                        </NewProductOldPrice>
 											}
 										</div>
 										<div>
 											<FavoriteIcon/>
 										</div>
-									</div>
-								</div>
-								<span onClick={() => navigate(ProductRoute.replace(':id', product.id.toString()))} className='image-container'>
-									<img className='new-product-image' src={product.image} alt='new-product-image'/>
-								</span>
-							</div>
+									</NewProductFooter>
+								</NewProductContent>
+								<NewProductImageContainer onClick={() => navigate(ProductRoute.replace(':id', product.id.toString()))}>
+									<NewProductImage className='new-product-image' src={product.image} alt='new-product-image'/>
+								</NewProductImageContainer>
+							</NewProduct>
 						</FadeAnimation>
 					))
 				}

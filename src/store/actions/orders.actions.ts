@@ -3,6 +3,7 @@ import {createAsyncThunk} from "@reduxjs/toolkit";
 // import {GetOrders, GetOrder} from "../api/endpoints.ts";
 import {OrderDummy, OrdersDummy} from "../../dummy-data.ts";
 import {AxiosError} from "axios";
+import {sleep} from "../../utils/helpers.ts";
 
 export const getOrders = createAsyncThunk(
 	'orders/getOrders',
@@ -10,6 +11,7 @@ export const getOrders = createAsyncThunk(
 		try {
 			// const response = await api.get(GetOrders);
 			// return await response.data;
+			await sleep(2000);
 			return OrdersDummy;
 		} catch (err) {
 			const error = err as AxiosError;

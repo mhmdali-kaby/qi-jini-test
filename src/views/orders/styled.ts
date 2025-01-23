@@ -1,8 +1,4 @@
-import styled from "styled-components";
-
-interface IOrdersTabProps {
-	$is_active: boolean;
-}
+import styled from '@emotion/styled';
 
 interface IOrderInfoColorProps {
 	$color: string;
@@ -28,10 +24,18 @@ export const OrdersTabs = styled.div`
     gap: 12px;
 `;
 
-export const OrdersTab = styled.div<IOrdersTabProps>`
-    border: 1px solid ${props => props.$is_active ? "#7AB877" : "#000"};
-    color: ${props => props.$is_active ? "#7AB877" : "#fff"};
-    background: ${props => props.$is_active ? "#fff" : "#000"};
+export const OrdersTab = styled.div`
+    border: 1px solid;
+		&.active {
+        border-color: #7AB877;
+        color: #7AB877;
+        background: #fff;
+		}
+		&.in-active {
+        border-color: #000;
+        color: #fff;
+        background: #000;
+		}
     border-radius: 8px;
     padding: 6px 12px;
     font-size: 14px;

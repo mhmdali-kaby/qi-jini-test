@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import {
-	OffersContainer
+	Offer, OfferButton, OfferContent, OfferDescription,
+	OffersContainer, OfferTitle
 } from "../styled.ts";
 import {useDispatch, useSelector} from "react-redux";
 import {AppDispatch, RootState} from "../../../store";
@@ -28,15 +29,15 @@ const OffersComponent: React.FC = () => {
 					:
 					offers.data.map((offer, index) => (
 						<FadeAnimation key={index}>
-							<div className='offer' style={{backgroundImage: `url(${offer.image})`}}>
-								<div className='offer-content'>
-									<div className='offer-title'>{offer.title}</div>
-									<div className='offer-description'>{offer.description}</div>
-								</div>
-								<div className='offer-button'>
+							<Offer style={{backgroundImage: `url(${offer.image})`}}>
+								<OfferContent>
+									<OfferTitle>{offer.title}</OfferTitle>
+									<OfferDescription>{offer.description}</OfferDescription>
+								</OfferContent>
+								<OfferButton>
 									{t('order_now')}
-								</div>
-							</div>
+								</OfferButton>
+							</Offer>
 						</FadeAnimation>
 					))
 				}
