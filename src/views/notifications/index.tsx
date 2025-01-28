@@ -3,7 +3,7 @@ import {Container} from "../../styles/styled.ts";
 import {
 	NotificationContainer,
 	NotificationContent,
-	NotificationImage,
+	NotificationImage, NotificationImageContainer,
 	NotificationMessage,
 	NotificationsContainer,
 	NotificationTime,
@@ -35,7 +35,9 @@ const NotificationsView: React.FC = () => {
 							<NotificationContainer key={index} $read={notification.read}>
 								<NotificationContent>
 									<NotificationMessage>{notification.message}</NotificationMessage>
-									<NotificationImage src={notification.image}/>
+									<NotificationImageContainer>
+										<NotificationImage src={notification.image}/>
+									</NotificationImageContainer>
 								</NotificationContent>
 								<NotificationTime>
 									{notification.time}

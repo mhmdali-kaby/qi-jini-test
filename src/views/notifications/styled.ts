@@ -35,8 +35,14 @@ export const NotificationContent = styled.div`
 `;
 
 export const NotificationImage = styled.img`
-    width: 16%;
+    width: 100%;
+		height: 100%;
     border-radius: 14px;
+`;
+
+export const NotificationImageContainer = styled.div`
+		width: 68px;
+		height: 58px;
 `;
 
 export const NotificationMessage = styled.div`
