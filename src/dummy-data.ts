@@ -54,7 +54,7 @@ export const OffersDummy = [
 export const ProductsDummy = [
 	{
 		id: 1,
-		image: '/dummy/product.png',
+		images: ['/dummy/product.png', '/dummy/product.png', '/dummy/product.png'],
 		title: 'منتج تي شيرت ابيض',
 		description: 'وصف منتج تي شيرت ابيض',
 		discount_time: null,
@@ -66,7 +66,7 @@ export const ProductsDummy = [
 	},
 	{
 		id: 2,
-		image: '/dummy/product.png',
+		images: ['/dummy/product.png', '/dummy/product.png', '/dummy/product.png'],
 		title: 'منتج تي شيرت احمر',
 		description: 'وصف منتج تي شيرت ابيض',
 		discount_time: '5 ايام و 10 ساعات و 25 دقيقه',
@@ -78,7 +78,7 @@ export const ProductsDummy = [
 	},
 	{
 		id: 3,
-		image: '/dummy/product.png',
+		images: ['/dummy/product-details.png', '/dummy/product-details.png', '/dummy/product-details.png'],
 		title: 'منتج تي شيرت اسود',
 		description: 'وصف منتج تي شيرت ابيض',
 		discount_time: null,
@@ -90,7 +90,7 @@ export const ProductsDummy = [
 	},
 	{
 		id: 4,
-		image: '/dummy/product.png',
+		images: ['/dummy/product-details.png', '/dummy/product-details.png', '/dummy/product-details.png'],
 		title: 'منتج تي شيرت اخضر',
 		description: 'وصف منتج تي شيرت ابيض',
 		discount_time: null,
@@ -464,7 +464,7 @@ export const DiscountDummy = [
 
 export const ProductDummy = {
 	id: 1,
-	image: '/dummy/product-details.png',
+	images: ['/dummy/product-details.png', '/dummy/product.png', '/dummy/product-details.png', '/dummy/product.png', '/dummy/product-details.png'],
 	title: 'سماعة ايربودز',
 	type: 'سماعة',
 	description: 'وصف يخص هذه السلعة بكامل تفاصيلها مع امكانية اضافة جدول يحتوي على خصائص المادة وصف يخص هذه السلعة بكامل تفاصيلها مع امكانية اضافة جدول يحتوي على خصائص المادة',

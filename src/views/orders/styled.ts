@@ -65,7 +65,7 @@ export const Order = styled.div`
 `;
 
 export const OrderImage = styled.img`
-    height: 90px;
+    height: 100px;
     object-fit: cover;
     border-radius: 14px;
     width: 40%;
@@ -160,14 +160,14 @@ export const OrderPrice = styled.div`
 
 export const OrderStatus = styled.div`
     display: flex;
-    gap: 8px;
+    gap: 4px;
     border-radius: 10px;
-    background: #00990A;
-    color: #FFF;
+    background: #f0fdf4;
+    color: #15803d;
+    border: 1px dashed #15803d;
     font-size: 10px;
     font-style: normal;
     font-weight: 800;
-    line-height: 150%;
-    padding: 4px 8px;
-    align-items: center;
+    padding: 4px 8px 2px;
+    align-items: flex-start;
 `;

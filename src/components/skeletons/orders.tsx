@@ -11,7 +11,7 @@ const OrderSkeletons: React.FC<OrderSkeletonsProps> = ({count}) => {
 	return (
 		Array(count).fill(null).map((_: null, index: number) => (
 			<FadeAnimation key={index}>
-				<Skeleton height={124} width={382} borderRadius={14}/>
+				<Skeleton height={126} width={382} borderRadius={14}/>
 			</FadeAnimation>
 		))
 	);

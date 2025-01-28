@@ -14,4 +14,5 @@ export const NavContainer = styled.nav<NavContainerProps>`
     background: #fff;
     padding: 16px 0;
     box-shadow: 0 -3px 7px 0 rgba(0, 0, 0, 0.10);
+		z-index: 9;
 `;

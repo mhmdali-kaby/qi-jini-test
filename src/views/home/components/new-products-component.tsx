@@ -90,7 +90,7 @@ const NewProductsComponent: React.FC<NewProductsComponentProps> = ({isLight}) =>
 									</NewProductFooter>
 								</NewProductContent>
 								<NewProductImageContainer onClick={() => navigate(ProductRoute.replace(':id', product.id.toString()))}>
-									<NewProductImage className='new-product-image' src={product.image} alt='new-product-image'/>
+									<NewProductImage className='new-product-image' src={product.images[0]} alt='new-product-image'/>
 								</NewProductImageContainer>
 							</NewProduct>
 						</FadeAnimation>

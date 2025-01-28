@@ -123,68 +123,6 @@ export const HomeProductsContainer = styled.div`
 		>div {
         width: 48%;
 		}
-		
-		.home-product {
-			
-				.home-product-content {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 0 10px 6px;
-            gap: 8px;
-						.home-product-numbers {
-                display: flex;
-                justify-content: space-between;
-								.home-product-price {
-                    color: #000;
-                    font-size: 20px;
-                    font-style: normal;
-                    font-weight: 700;
-                    line-height: 100%;
-                    display: flex;
-                    gap: 2px;
-                    align-items: baseline;
-
-                    span {
-                        font-size: 12px;
-                    }
-								}
-								.home-product-old-price {
-                    color: #D40000;
-                    font-size: 14px;
-                    display: flex;
-                    gap: 4px;
-                    align-items: flex-end;
-
-                    div {
-                        text-decoration: line-through;
-                    }
-								}
-								.home-product-rate {
-                    display: flex;
-                    gap: 2px;
-                    align-items: baseline;
-								}
-						}
-						.home-product-text {
-                direction: rtl;
-								.home-product-title {
-                    color: #000;
-                    font-style: normal;
-                    font-weight: 700;
-                    line-height: 150%;
-								}
-								.home-product-description {
-                    color: #666;
-                    font-size: 12px;
-                    font-style: normal;
-                    font-weight: 400;
-                    line-height: 150%;
-								}
-						}
-				}
-		}
 `;
 
 export const HomeProduct = styled.div`
@@ -195,12 +133,14 @@ export const HomeProduct = styled.div`
     border-radius: 24px;
     border: 1px solid #EAEAEA;
     background: #FFF7F1;
-    filter: drop-shadow(0px 3px 10px rgba(0, 0, 0, 0.12));
-    height: 305px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+    height: 300px;
 `;
 
 export const HomeProductImage = styled.img`
     width: 100%;
+		height: 198px;
+		object-fit: cover;
     border-radius: 24px;
 `;
 
@@ -208,6 +148,71 @@ export const HomeProductFavoriteIcon = styled.div`
     position: absolute;
     top: 10px;
     left: 12px;
+`;
+
+export const HomeProductContent = styled.div`
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 10px 6px;
+`;
+
+export const HomeProductNumbers = styled.div`
+    display: flex;
+    justify-content: space-between;
+`;
+
+export const HomeProductPrice = styled.div`
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    display: flex;
+    gap: 2px;
+    align-items: baseline;
+
+    span {
+        font-size: 12px;
+    }
+`;
+
+export const HomeProductOldPrice = styled.div`
+    color: #D40000;
+    font-size: 14px;
+    display: flex;
+    gap: 4px;
+    align-items: flex-end;
+
+    div {
+        text-decoration: line-through;
+    }
+`;
+
+export const HomeProductRate = styled.div`
+    display: flex;
+    gap: 2px;
+    align-items: baseline;
+`;
+
+export const HomeProductText = styled.div`
+    direction: rtl;
+`;
+
+export const HomeProductTitle = styled.div`
+    color: #000;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+`;
+
+export const HomeProductDescription = styled.div`
+    color: #666;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
 `;
 
 export const NewProducts = styled.div`
@@ -230,7 +235,7 @@ export const NewProduct = styled.div`
     border-radius: 24px;
     background: #FFF;
     justify-content: space-between;
-    filter: drop-shadow(0px 3px 10px rgba(0, 0, 0, 0.12));
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
 `;
 
 export const NewProductContent = styled.div`
@@ -331,6 +336,8 @@ export const NewProductImageContainer = styled.span`
 
 export const NewProductImage = styled.img`
     object-fit: cover;
+		height: 170px;
+		width: 155px;
     border-radius: 24px;
 `;
 

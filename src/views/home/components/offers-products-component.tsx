@@ -1,8 +1,14 @@
 import React, {useEffect, useState} from "react";
 import {
-	HomeProduct, HomeProductFavoriteIcon, HomeProductImage,
+	HomeProduct,
+	HomeProductContent, HomeProductDescription,
+	HomeProductFavoriteIcon,
+	HomeProductImage,
+	HomeProductNumbers,
+	HomeProductOldPrice,
+	HomeProductPrice, HomeProductRate,
 	HomeProductsContainer,
-	HomeProductsTitle,
+	HomeProductsTitle, HomeProductText, HomeProductTitle,
 } from "../styled.ts";
 import {useDispatch, useSelector} from "react-redux";
 import {AppDispatch, RootState} from "../../../store";
@@ -60,35 +66,35 @@ const OffersProductsComponent: React.FC<OffersProductsComponentProps> = ({isSpec
 							<FadeAnimation key={index}>
 								<HomeProduct>
 									<span onClick={() => navigate(ProductRoute.replace(':id', offer.id.toString()))}>
-										<HomeProductImage src={offer.image}/>
+										<HomeProductImage src={offer.images[0]}/>
 									</span>
 									<HomeProductFavoriteIcon>
 										<FavoriteIcon/>
 									</HomeProductFavoriteIcon>
-									<div className='home-product-content'>
-										<div className='home-product-numbers'>
+									<HomeProductContent>
+										<HomeProductNumbers>
 											<div>
-												<div className='home-product-price'>
+												<HomeProductPrice>
 													{formatPrice(offer.price)}
 													<span>{CURRENCY}</span>
-												</div>
+												</HomeProductPrice>
 												{offer.old_price &&
-                          <div className='home-product-old-price'>
+                          <HomeProductOldPrice>
                             <div>{formatPrice(offer.old_price)}</div>
                             <span>{t('previously')}</span>
-                          </div>
+                          </HomeProductOldPrice>
 												}
 											</div>
-											<div className='home-product-rate'>
+											<HomeProductRate>
 												{offer.rate}
 												<StarIcon/>
-											</div>
-										</div>
-										<div className='home-product-text' onClick={() => navigate(ProductRoute.replace(':id', offer.id.toString()))}>
-											<div className='home-product-title'>{offer.title}</div>
-											<div className='home-product-description'>{offer.description}</div>
-										</div>
-									</div>
+											</HomeProductRate>
+										</HomeProductNumbers>
+										<HomeProductText onClick={() => navigate(ProductRoute.replace(':id', offer.id.toString()))}>
+											<HomeProductTitle>{offer.title}</HomeProductTitle>
+											<HomeProductDescription>{offer.description}</HomeProductDescription>
+										</HomeProductText>
+									</HomeProductContent>
 								</HomeProduct>
 							</FadeAnimation>
 						))

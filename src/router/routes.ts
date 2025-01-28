@@ -26,7 +26,7 @@ export const routesConfig: Record<string, IRouteConfig> = {
 	[DiscountsRoute]: {withHeader: true, withNav: true, showHeaderIcon: false},
 	[OrdersRoute]: {withHeader: true, withNav: true, showHeaderIcon: false},
 	[ProfileRoute]: {withHeader: true, withNav: true, showHeaderIcon: false},
-	[ProductsRoute]: {withHeader: true, withNav: false, showHeaderIcon: false},
+	[ProductsRoute]: {withHeader: false, withNav: false, showHeaderIcon: false},
 	[CartRoute]: {withHeader: true, withNav: false, showHeaderIcon: false},
 	[PaymentRoute]: {withHeader: true, withNav: false, showHeaderIcon: false},
 	[AddLocationRoute]: {withHeader: true, withNav: false, showHeaderIcon: false},

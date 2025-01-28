@@ -2,7 +2,7 @@ import {IProductAttribute} from "./product-attribute.interface.ts";
 
 export interface IProduct {
 	id: number;
-	image: string;
+	images: string[];
 	title: string;
 	type?: string;
 	description: string;

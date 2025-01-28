@@ -67,7 +67,7 @@ export const HeaderRightAvatar = styled.div`
     background: #fff;
     padding: 12px 18px;
     border-radius: 50%;
-    filter: drop-shadow(0px 3px 10px rgba(0, 0, 0, 0.12));
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
 `;
 
 export const HeaderRightContentWelcome = styled.div`

@@ -43,10 +43,13 @@ export const PaymentMethodContainer = styled.label<PaymentMethodContainerProps>`
     justify-content: space-between;
     padding: 6px 14px;
     align-items: center;
-    border: 1px solid ${({$selected, theme}) => $selected ? theme.colors.orange : '#fff'};
-
+    background: ${({$selected, theme}) => $selected ? theme.colors.orange : '#fff'};
+    color: ${({$selected}) => $selected ? '#fff' : '#000'};
+    font-weight: ${({$selected}) => $selected ? 700 : 400};
+		transition: all 0.3s ease-in-out;
+		
     input {
-        accent-color: #f16e13;
+		    display: none;
     }
 `;
 
@@ -57,11 +60,9 @@ export const PaymentMethodContent = styled.div`
 `;
 
 export const PaymentMethodTitle = styled.div`
-    color: #000;
     text-align: right;
     font-size: 14px;
     font-style: normal;
-    font-weight: 400;
     line-height: normal;
 `;
 

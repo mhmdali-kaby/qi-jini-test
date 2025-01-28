@@ -1,61 +1,86 @@
 import styled from '@emotion/styled';
 
+export const BackIcon = styled.div`
+    position: fixed;
+    z-index: 9;
+    top: 16px;
+`;
+
 export const ProductContainer = styled.div`
+    margin-bottom: 60px;
+		padding: 0;
+`;
+
+export const ProductContent = styled.div`
     display: flex;
     flex-direction: column;
     gap: 16px;
-    margin: 24px 0 60px;
+		padding: 32px 24px 100px;
+    margin-top: -26px;
+    position: absolute;
+    background: #fff;
+    border-top-left-radius: 32px;
+    border-top-right-radius: 32px;
+		z-index: 2;
 `;
 
 export const ProductImageContainer = styled.div`
-		position: relative;
-		img {
-        width: 100%;
-        height: 300px;
-        object-fit: cover;
-        object-position: top;
-        border-radius: 24px;
+    height: 400px;
+		.swiper-pagination {
+				position: relative;
+				top: -50px;
+				.swiper-pagination-bullet {
+						transition: all .3s ease-in-out;
+				}
+				.swiper-pagination-bullet-active {
+						background: #666;
+						border-radius: 20px;
+						width: 20px;
+				}
 		}
 `;
 
-export const ProductRate = styled.div`
-		position: absolute;
-		bottom: 0;
-		left: -12px;
-    border-radius: 12px;
-		background: #fff;
-		padding: 12px;
-		>div {
-        padding: 10px;
-        border-radius: 12px;
-        background: #FFF397;
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-		}
+export const SwiperSlideContainer = styled.div`
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    background: linear-gradient(rgb(221 221 221 / 54%), rgb(193 193 193 / 24%));
 `;
 
-export const ProductRateValue = styled.div`
-    color: #000;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 100%;
-		display: flex;
-    gap: 4px;
-    align-items: flex-start;
-`;
-
-export const ProductRateCount = styled.div`
-    color: #000;
-    font-size: 10px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 150%;
+export const SwiperSlideItem = styled.div`
+    position: relative;
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
     display: flex;
-    flex-direction: row-reverse;
     justify-content: center;
-    gap: 4px;
+    align-items: center;
+    z-index: 2;
+
+    img {
+        height: 100%;
+        width: auto;
+        object-fit: cover;
+    }
+`;
+
+export const ProductImageSlideIcons = styled.div`
+    position: absolute;
+    top: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+		svg {
+        margin: 0 10px;
+				z-index: 2;
+		}
+`;
+
+export const FavoriteButton = styled.div`
+    position: absolute;
+    right: 20px;
+    top: 320px;
+    z-index: 1;
 `;
 
 export const ProductTitleContainer = styled.div`
@@ -98,6 +123,16 @@ export const ProductCount = styled.div`
     font-size: 18px;
     font-weight: bold;
 		justify-content: space-between;
+`;
+
+export const RatingContainer = styled.div`
+		display: flex;
+		direction: rtl;
+		gap: 8px;
+`;
+
+export const RatingCount = styled.div`
+		font-size: 14px;
 `;
 
 export const ProductDescription = styled.div`

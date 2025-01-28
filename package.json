@@ -24,7 +24,9 @@
     "react-loading-skeleton": "^3.5.0",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.1.1",
-    "react-swipeable": "^7.0.2"
+    "react-simple-star-rating": "^5.1.7",
+    "react-swipeable": "^7.0.2",
+    "swiper": "^11.2.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.18.0",

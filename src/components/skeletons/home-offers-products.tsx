@@ -11,7 +11,7 @@ const HomeOffersProductsSkeletons: React.FC<HomeOffersProductsSkeletonsProps> = 
 	return (
 		Array(count).fill(null).map((_: null, index: number) => (
 			<FadeAnimation key={index}>
-				<Skeleton height={307} borderRadius={24}/>
+				<Skeleton height={302} borderRadius={24}/>
 			</FadeAnimation>
 		))
 	);

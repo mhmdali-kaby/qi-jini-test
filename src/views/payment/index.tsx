@@ -23,6 +23,7 @@ import LocationIcon from "../../components/icons/location.icon.tsx";
 import InputComponent from "../../components/input";
 import {AddLocationRoute, OrderDetailsRoute} from "../../router/routes.ts";
 import {useNavigate} from "react-router-dom";
+import CheckMarkIcon from "../../components/icons/check-mark.icon.tsx";
 
 const PaymentView: React.FC = () => {
 	const {t} = useTranslation();
@@ -53,6 +54,7 @@ const PaymentView: React.FC = () => {
 								<PaymentMethodContainer key={index} $selected={selected_payment_type == PaymentMethod.id}>
 									<input type="radio" name='payment-method' value={PaymentMethod.id} onChange={selectPaymentMethod}
 									       checked={selected_payment_type == PaymentMethod.id}/>
+									<CheckMarkIcon/>
 									<PaymentMethodContent>
 										<PaymentMethodTitle>
 											{t(PaymentMethod.title)}
