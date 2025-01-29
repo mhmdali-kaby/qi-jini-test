@@ -99,7 +99,7 @@ export const GlobalStyles = () => (
             top: 0;
             left: 0;
             height: 100vh;
-            padding: 0;
+            padding: 0 !important;
             width: 100%;
             z-index: 9;
         }

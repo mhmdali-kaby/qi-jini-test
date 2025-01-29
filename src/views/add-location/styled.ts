@@ -25,13 +25,28 @@ export const AddLocationTitle = styled.div`
 `;
 
 export const ChangeMapContainer = styled.div`
-    height: 200px;
-
+		>div:first-of-type {
+				height: 0;
+		}
     > div {
         width: 100%;
-        height: 100%;
+        height: 250px;
         border-radius: 18px;
     }
+`;
+
+export const AutocompleteContainer = styled.span`
+    margin-bottom: 10px;
+    display: flex;
+		justify-content: center;	
+		input {
+        width: 300px;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        outline: none;
+		}
 `;
 
 export const AddLocationButton = styled.div`
