@@ -59,8 +59,9 @@ export const SwiperSlideItem = styled.div`
 
     img {
         height: 100%;
-        width: auto;
+        width: 100%;
         object-fit: cover;
+        object-position: top;
     }
 `;
 
@@ -81,6 +82,10 @@ export const FavoriteButton = styled.div`
     right: 20px;
     top: 320px;
     z-index: 1;
+		svg {
+				width: 40px;
+				height: 40px;
+		}
 `;
 
 export const ProductTitleContainer = styled.div`

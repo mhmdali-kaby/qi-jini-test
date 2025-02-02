@@ -35,8 +35,8 @@ const HomeView: React.FC = () => {
 					</ClickableButton>
 					<SearchInput/>
 				</SearchContainer>
-				<FilterCategoriesComponent/>
 				<OffersComponent/>
+				<FilterCategoriesComponent/>
 				<OffersProductsComponent/>
 				<NewProductsComponent/>
 				<OffersProductsComponent isSpecialOffers/>

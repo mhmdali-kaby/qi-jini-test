@@ -20,7 +20,7 @@ export const PopUpContainer = styled.div`
             background: ${({theme}) => theme.colors.orange};
             color: #FFF;
             text-align: center;
-            font-size: 16px;
+            font-size: 20px;
             font-style: normal;
             font-weight: 700;
             line-height: 150%;

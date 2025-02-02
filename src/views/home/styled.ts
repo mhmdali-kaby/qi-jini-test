@@ -24,7 +24,7 @@ export const FilterCategoriesContainer = styled.div`
 `;
 
 export const FilterCategory = styled.div`
-    border-radius: 50px;
+    border-radius: 8px;
     border: 1px solid #CCC;
     padding: 4px 15px;
     display: flex;
@@ -130,9 +130,8 @@ export const HomeProduct = styled.div`
     display: flex;
     flex-direction: column;
     gap: 8px;
-    border-radius: 24px;
+    border-radius: 8px;
     border: 1px solid #EAEAEA;
-    background: #FFF7F1;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
     height: 300px;
 `;
@@ -141,7 +140,7 @@ export const HomeProductImage = styled.img`
     width: 100%;
 		height: 198px;
 		object-fit: cover;
-    border-radius: 24px;
+    border-radius: 8px;
 `;
 
 export const HomeProductFavoriteIcon = styled.div`
@@ -216,7 +215,7 @@ export const HomeProductDescription = styled.div`
 `;
 
 export const NewProducts = styled.div`
-    background: ${({theme}) => theme.colors.backgroundOrange};
+    background: #FFF6F3;
     padding: 12px 24px 24px !important;
     margin: 24px 0;
     left: 0;
@@ -232,7 +231,7 @@ export const NewProducts = styled.div`
 export const NewProduct = styled.div`
     display: flex;
     gap: 8px;
-    border-radius: 24px;
+    border-radius: 8px;
     background: #FFF;
     justify-content: space-between;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
@@ -247,14 +246,6 @@ export const NewProductContent = styled.div`
     gap: 6px;
 `;
 
-export const NewProductHeader = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding-left: 14px;
-    width: 100%;
-`;
-
 export const NewProductRate = styled.div`
     display: flex;
     gap: 4px;
@@ -263,11 +254,12 @@ export const NewProductRate = styled.div`
 `;
 
 export const NewProductLabel = styled.div`
-    border-bottom-left-radius: 18px;
-    border-top-left-radius: 18px;
+    border-top-left-radius: 5px;
     color: #fff;
     position: relative;
-    right: -18px;
+    right: 0;
+		top: 1px;
+		width: 100%;
     direction: rtl;
     font-size: 12px;
     padding: 4px 28px 4px 6px;
@@ -299,6 +291,12 @@ export const NewProductFooter = styled.div`
     display: flex;
     justify-content: space-between;
     padding-left: 8px;
+    align-items: center;
+`;
+
+export const NewProductFooterIcons = styled.div`
+		display: flex;
+    gap: 5px;
     align-items: center;
 `;
 
@@ -338,7 +336,7 @@ export const NewProductImage = styled.img`
     object-fit: cover;
 		height: 170px;
 		width: 155px;
-    border-radius: 24px;
+    border-radius: 8px;
 `;
 
 export const NewProductsTitle = styled.div`
@@ -348,7 +346,7 @@ export const NewProductsTitle = styled.div`
     margin-bottom: 2px;
 
     div {
-        color: #FFF;
+        color: #000;
         font-size: 18px;
         font-style: normal;
         font-weight: 700;
@@ -357,8 +355,8 @@ export const NewProductsTitle = styled.div`
 
     span {
         border-radius: 50px;
-        border: 1px solid #FFF;
-        color: #FFF;
+        border: 1px solid #000;
+        color: #000;
         font-size: 12px;
         font-style: normal;
         font-weight: 700;

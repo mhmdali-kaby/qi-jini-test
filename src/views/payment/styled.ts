@@ -91,6 +91,22 @@ export const LocationAdditionalInformation = styled.div`
     display: flex;
     gap: 8px;
     flex-direction: column;
+		.notes-textarea {
+        background: #F4F4F5;
+        border: none;
+        direction: rtl;
+        border-radius: 14px;
+        padding: 16px 18px;
+
+        &:focus {
+            outline: none;
+        }
+
+        &::placeholder {
+            color: #71717A;
+            font-size: 16px;
+        }
+		}
 `;
 
 export const LocationAdditionalInformationNote = styled.div`

@@ -20,7 +20,6 @@ import {useTranslation} from "react-i18next";
 import {PAYMENT_METHODS} from "../../utils/constants.ts";
 import {changePaymentMethod} from "../../store/reducers/cart.reducer.ts";
 import LocationIcon from "../../components/icons/location.icon.tsx";
-import InputComponent from "../../components/input";
 import {AddLocationRoute, OrderDetailsRoute} from "../../router/routes.ts";
 import {useNavigate} from "react-router-dom";
 import CheckMarkIcon from "../../components/icons/check-mark.icon.tsx";
@@ -75,8 +74,7 @@ const PaymentView: React.FC = () => {
 						</span>
 						<PaymentTitle>{t('location_additional_information')}</PaymentTitle>
 						<LocationAdditionalInformation>
-							<InputComponent placeholder={t('phone_number')} name='phone_number'/>
-							<InputComponent placeholder={t('nearest_point')} name='nearest_point'/>
+							<textarea name="notes" id="notes" rows={10} placeholder={t('notes')} className='notes-textarea'></textarea>
 							<LocationAdditionalInformationNote>
 								{t('location_additional_information_note')} *
 							</LocationAdditionalInformationNote>

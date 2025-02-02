@@ -3,8 +3,8 @@ import {
 	NewProduct,
 	NewProductContent,
 	NewProductDescription,
-	NewProductFooter,
-	NewProductHeader, NewProductImage, NewProductImageContainer,
+	NewProductFooter, NewProductFooterIcons,
+	NewProductImage, NewProductImageContainer,
 	NewProductLabel, NewProductOldPrice, NewProductPrice,
 	NewProductRate,
 	NewProducts,
@@ -23,7 +23,7 @@ import {ProductRoute} from "../../../router/routes.ts";
 import {formatPrice} from "../../../utils/numbers.ts";
 import {CURRENCY} from "../../../utils/constants.ts";
 import FavoriteIcon from "../../../components/icons/favorite.icon.tsx";
-import {DashDivider} from "../../../styles/styled.ts";
+import {HomeDivider} from "../../../styles/styled.ts";
 import {useNavigate} from "react-router-dom";
 import NewProductsSkeletons from "../../../components/skeletons/new-products.tsx";
 
@@ -56,17 +56,11 @@ const NewProductsComponent: React.FC<NewProductsComponentProps> = ({isLight}) =>
 						<FadeAnimation key={index}>
 							<NewProduct>
 								<NewProductContent>
-									<NewProductHeader>
-										<NewProductRate>
-											{product.rate}
-											<StarIcon/>
-										</NewProductRate>
-										{product.label &&
-                      <NewProductLabel style={{background: product.label_color ?? '#fff'}}>
-												{product.label}
-                      </NewProductLabel>
-										}
-									</NewProductHeader>
+									{product.label &&
+                    <NewProductLabel style={{background: product.label_color ?? '#fff'}}>
+											{product.label}
+                    </NewProductLabel>
+									}
 									<NewProductText onClick={() => navigate(ProductRoute.replace(':id', product.id.toString()))}>
 										<NewProductTitle>{product.title}</NewProductTitle>
 										<NewProductDescription>{product.description}</NewProductDescription>
@@ -84,9 +78,13 @@ const NewProductsComponent: React.FC<NewProductsComponentProps> = ({isLight}) =>
                         </NewProductOldPrice>
 											}
 										</div>
-										<div>
+										<NewProductFooterIcons>
+											<NewProductRate>
+												{product.rate}
+												<StarIcon/>
+											</NewProductRate>
 											<FavoriteIcon/>
-										</div>
+										</NewProductFooterIcons>
 									</NewProductFooter>
 								</NewProductContent>
 								<NewProductImageContainer onClick={() => navigate(ProductRoute.replace(':id', product.id.toString()))}>
@@ -98,7 +96,7 @@ const NewProductsComponent: React.FC<NewProductsComponentProps> = ({isLight}) =>
 				}
 			</NewProducts>
 			<div key={`new-product-${isLight ? 'light' : 'not-light'}-divider`}>
-				<DashDivider/>
+				<HomeDivider/>
 			</div>
 		</AnimatePresence>
 	);

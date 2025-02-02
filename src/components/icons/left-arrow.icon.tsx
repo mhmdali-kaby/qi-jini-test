@@ -1,4 +1,5 @@
 import React from 'react';
+import {BackIconContainer} from "../../styles/styled.ts";
 
 interface LeftArrowIconProps {
 	onClick?: () => void;
@@ -6,12 +7,11 @@ interface LeftArrowIconProps {
 
 const LeftArrowIcon: React.FC<LeftArrowIconProps> = ({onClick}) => {
 	return (
-		<svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41" fill="none" onClick={onClick}>
-			<circle cx="20.5" cy="20.5" r="19" fill="#F97316" stroke="#F97316" strokeWidth="3"/>
-			<path fillRule="evenodd" clipRule="evenodd"
-			      d="M21.16 20.993V20.639C21.15 19.235 21.07 17.982 20.92 17.188C20.92 17.173 20.76 16.386 20.66 16.124C20.5 15.745 20.21 15.423 19.85 15.219C19.56 15.074 19.2599 15 18.9399 15C18.6899 15.012 18.28 15.137 17.99 15.242L17.74 15.336C16.13 15.978 13.04 18.077 11.85 19.36L11.76 19.45L11.38 19.87C11.13 20.191 11 20.585 11 21.008C11 21.387 11.12 21.766 11.35 22.072C11.42 22.171 11.53 22.298 11.63 22.406L12.01 22.803C13.31 24.124 16.13 25.978 17.6 26.592C17.6 26.606 18.5099 26.986 18.9399 27H19C19.66 27 20.28 26.621 20.6 26.009C20.69 25.841 20.77 25.513 20.84 25.225L20.95 24.681C21.08 23.807 21.16 22.465 21.16 20.993ZM27.5 22.518C28.33 22.518 29 21.839 29 21C29 20.162 28.33 19.483 27.5 19.483L23.8 19.81C23.15 19.81 22.62 20.342 22.62 21C22.62 21.658 23.15 22.191 23.8 22.191L27.5 22.518Z"
-			      fill="white"/>
-		</svg>
+		<BackIconContainer>
+			<svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={onClick}>
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M10.9571 12L14.1035 8.85353L13.3964 8.14642L9.89641 11.6464C9.70115 11.8417 9.70115 12.1583 9.89641 12.3535L13.3964 15.8535L14.1035 15.1464L10.9571 12Z" fill="white"/>
+			</svg>
+		</BackIconContainer>
 	);
 };
 

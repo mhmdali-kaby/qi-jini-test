@@ -183,9 +183,9 @@ const ProductView: React.FC = () => {
 									</AddToCartPrice>
 									<ClickableButton onClick={() => (popUpOpen ? closePopUp() : openPopUp())}>
 										<AddToCartButton onClick={addToCart}>
-										<span>
-											{t('add_to_cart')}
-										</span>
+											<span>
+												{t('add_to_cart')}
+											</span>
 											<AddProductToCart/>
 										</AddToCartButton>
 									</ClickableButton>

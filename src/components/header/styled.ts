@@ -52,7 +52,7 @@ export const HeaderIconCounter = styled.span<{ $small: boolean }>`
 
 export const HeaderRightIcons = styled.div`
     display: flex;
-    gap: 4px;
+    gap: 8px;
     align-items: center;
 `;
 

@@ -21,7 +21,7 @@ import {formatPrice} from "../../../utils/numbers.ts";
 import {CURRENCY} from "../../../utils/constants.ts";
 import StarIcon from "../../../components/icons/star.icon.tsx";
 import {useNavigate} from "react-router-dom";
-import {DashDivider} from "../../../styles/styled.ts";
+import {HomeDivider} from "../../../styles/styled.ts";
 import HomeOffersProductsSkeletons from "../../../components/skeletons/home-offers-products.tsx";
 import {AnimatePresence} from "framer-motion";
 import {IProduct} from "../../../store/interfaces/product.interface.ts";
@@ -100,7 +100,7 @@ const OffersProductsComponent: React.FC<OffersProductsComponentProps> = ({isSpec
 						))
 					}
 				</HomeProductsContainer>
-				<DashDivider key='offers-products-divider'/>
+				<HomeDivider key='offers-products-divider'/>
 			</AnimatePresence>
 		</div>
 	);

@@ -69,13 +69,13 @@ export const CartItem = styled.div`
 `;
 
 export const CartItemImageContainer = styled.div`
-    width: 25%;
+    width: 30%;
     display: flex;
 
     img {
         width: 100%;
         object-fit: cover;
-        height: 74px;
+        height: 89px;
         border-radius: 8px;
     }
 `;
@@ -96,7 +96,7 @@ export const CartItemTitleContainer = styled.div`
 export const CartItemTitle = styled.span`
     color: #000;
     text-align: right;
-    font-size: 14px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 700;
     line-height: 150%;
@@ -104,7 +104,7 @@ export const CartItemTitle = styled.span`
 
 export const CartItemType = styled.span`
     color: #666;
-    font-size: 11px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
@@ -128,11 +128,11 @@ export const CartItemPrice = styled.span`
 
 export const CartItemCount = styled.div`
     background: #EEE;
-    width: 20%;
+    width: 24%;
     border-radius: 30px;
     display: flex;
     padding: 4px 12px 0;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: bold;
     justify-content: space-between;
 `;
@@ -151,7 +151,7 @@ export const PromoCode = styled.div`
         background: ${({theme}) => theme.colors.orange};
         border-radius: 8px;
         color: #FFF;
-        font-size: 14px;
+        font-size: 16px;
         font-style: normal;
         font-weight: 700;
         border: none;
@@ -163,6 +163,7 @@ export const PromoCode = styled.div`
         background: none;
         border: none;
         direction: rtl;
+		    font-size: 16px;
 
         &:focus-within {
             outline: none;
@@ -215,7 +216,7 @@ export const CartCompleteAndPay = styled.div`
     background: ${({theme}) => theme.colors.orange};
     padding: 10px 14px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;	
     align-items: center;
     border-radius: 10px;
 

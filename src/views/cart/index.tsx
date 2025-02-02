@@ -34,7 +34,6 @@ import {
 	offlineCartItemsInfo
 } from "../../store/reducers/cart.reducer.ts";
 import {CURRENCY} from "../../utils/constants.ts";
-import CompleteAndPayIcon from "../../components/icons/complete-and-pay.icon.tsx";
 import WhiteTrashIcon from "../../components/icons/white-trash.icon.tsx";
 import {useNavigate} from "react-router-dom";
 import {PaymentRoute} from "../../router/routes.ts";
@@ -151,10 +150,9 @@ const CartView: React.FC = () => {
 						</CartPriceContainer>
 						<span onClick={() => navigate(PaymentRoute)}>
 							<CartCompleteAndPay>
-								<CompleteAndPayIcon/>
 								<span>
-								{t('complete_and_pay')}
-							</span>
+									{t('complete_and_pay')}
+								</span>
 							</CartCompleteAndPay>
 						</span>
 					</CompleteButtonContainer>
